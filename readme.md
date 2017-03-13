@@ -1,11 +1,11 @@
 ##Overwatch Counter Calculator
 =========================================
 
-Author: Brady Ericksen
+Author: Brady Ericksen  
 Email Address: bradyericksen@gmail.com
 
 The purpose of this project is to create a helpful visual tool to help decide on team composition based on the enemy team.  
-Many times when playing, my team will have a hard time dealing with a specific hero on the enemy team. When this happens, some of us may not know the correct counter to deal with them or we may not realize that the hero counterse our team composition.
+Many times when playing, my team will have a hard time dealing with a specific hero on the enemy team. When this happens, some of us may not know the correct counter to deal with them or we may not realize that the hero counterse our team composition.  
 The design of this project is intended for multiple monitor set-ups, such that this calculator can reside in one of the secondary monitors for quick reference during gameplay.
 
 ####Features:
