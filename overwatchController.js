@@ -7,7 +7,6 @@
 //TODO: ULT synergies
 //TODO: Create array of each hero of each type (json), so I can see if Zen is the only healer. OR make it a variable in the counters.json
 //TODO: Include an angular directive (?)
-//TODO: Make readme.md
 //TODO: Get ng-hide or ng-show working, or revert back to jQuery hide and show. Talk to professor.
 
 /* global $ */
@@ -33,19 +32,17 @@ angular.module("app", [])
         hideAlerts("ally");
         hideAlerts("enemy");
 
-        $counterService.getCounters().then(function(res) {
+        $counterService.getCounters().then(function (res) {
             $scope.counters = res.data;
         });
 
-        $scope.toggleTest = function() {
+        $scope.toggleTest = function () {
             $scope.testVar = !$scope.testVar;
             console.log($scope.testVar);
             //$scope.$applyAsync();
         };
 
-        $scope.heroSelected = function(hero, team) {
-            //call reset variables function
-
+        $scope.heroSelected = function (hero, team) {
             if (team == "enemy") {
                 var enemy_dps = 0;
                 var enemy_tanks = 0;
@@ -61,7 +58,7 @@ angular.module("app", [])
                 hideAlerts('enemy');
                 $('.enemyTeam option:selected').each(function () {
                     hero = $(this).text();
-                    if(hero != '') {
+                    if (hero != '') {
                         //console.log("Inside selections");
                         console.log(hero);
                         console.log('Team: ' + team);
@@ -206,7 +203,7 @@ angular.module("app", [])
                 if (enemy_mobility < 2) $('#lowMobilityEnemy').show();
                 if (enemy_tanks > 3) $('#highTanksEnemy').show();
             }
-            else if(team == 'ally') {
+            else if (team == 'ally') {
                 var ally_dps = 0;
                 var ally_tanks = 0;
                 var ally_support = 0;
@@ -221,7 +218,7 @@ angular.module("app", [])
                 hideAlerts('ally');
                 $('.allyTeam option:selected').each(function () {
                     hero = $(this).text();
-                    if(hero != '') {
+                    if (hero != '') {
                         //console.log("Inside selections");
                         console.log(hero);
                         console.log('Team: ' + team);
@@ -369,16 +366,16 @@ angular.module("app", [])
             }
         };
 
-        $scope.displayCounters = function(clickedHero){
+        $scope.displayCounters = function (clickedHero) {
             reset();
             $('.' + clickedHero).css("background-color", BLUE);
-            for(var i = 0; i < $scope.counters.length; i++) {
+            for (var i = 0; i < $scope.counters.length; i++) {
                 var hero = $scope.counters[i];
                 if (hero.name == clickedHero) {
                     for (var j = 0; j < hero.counters.length; j++) {
                         $('.' + hero.counters[j]).css("background-color", GREEN);
                     }
-                    for (var k = 0; k < hero.counteredBy.length; k++){
+                    for (var k = 0; k < hero.counteredBy.length; k++) {
                         $('.' + hero.counteredBy[k]).css("background-color", RED);
                     }
                 }
@@ -437,6 +434,7 @@ angular.module("app", [])
                 $('#highTanksEnemy').hide();
             }
         }
+    }]);
 
         //refactor these two use angular ng-click directive
         /*$(".enemyTeam option").click(function () {
@@ -602,145 +600,4 @@ angular.module("app", [])
                     var pick = $(this).val();
                     if (pick != "-Select-") {
                         //console.log(pick);
-                        if (pick == "Genji") {
-                            dps += 1;
-                            projectiles += 1;
-                            mobility += 1;
-                        }
-                        else if (pick == "McCree") {
-                            dps += 1;
-                            hitscan += 1;
-                        }
-                        else if (pick == "Pharah") {
-                            dps += 1;
-                            projectiles += 1;
-                            mobility += 1;
-                        }
-                        else if (pick == "Reaper") {
-                            dps += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Soldier76") {
-                            dps += 1;
-                            hitscan += 1;
-                            mobility += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Sombra") {
-                            dps += 1;
-                            hitscan += 1;
-                            mobility += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Tracer") {
-                            dps += 1;
-                            hitscan += 1;
-                            mobility += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Bastion") {
-                            dps += 1;
-                            hitscan += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Hanzo") {
-                            dps += 1;
-                            projectiles += 1;
-                        }
-                        else if (pick == "Junkrat") {
-                            dps += 1;
-                            projectiles += 1;
-                        }
-                        else if (pick == "Mei") {
-                            dps += 1;
-                            beam += 1;
-                            projectiles += 1;
-                            block += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Torbjorn") {
-                            dps += 1;
-                            builder += 1;
-                            projectiles += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Widowmaker") {
-                            dps += 1;
-                            hitscan += 1;
-                            mobility += 1;
-                        }
-                        else if (pick == "D.Va") {
-                            tanks += 1;
-                            mobility += 1;
-                            block += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Reinhardt") {
-                            tanks += 1;
-                            mobility += 1;
-                            block += 2;
-                        }
-                        else if (pick == "Roadhog") {
-                            tanks += 1;
-                            dps += 1;
-                            projectiles += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Winston") {
-                            tanks += 1;
-                            beam += 1;
-                            mobility += 1;
-                            block += 1;
-                        }
-                        else if (pick == "Zarya") {
-                            tanks += 1;
-                            dps += 1;
-                            beam += 1;
-                            block += 1;
-                            projectiles += 1;
-                        }
-                        else if (pick == "Ana") {
-                            support += 1;
-                            hitscan += 1;
-                            projectiles += 1;
-                            sustain += 2;
-                        }
-                        else if (pick == "Lucio") {
-                            support += 1;
-                            mobility += 2;
-                            projectiles += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Mercy") {
-                            support += 1;
-                            mobility += 1;
-                            sustain += 1;
-                        }
-                        else if (pick == "Symmetra") {
-                            dps += 1;
-                            mobility += 1;
-                            block += 1;
-                            beam += 1;
-                        }
-                        else if (pick == "Zenyatta") {
-                            support += 1;
-                            dps += 1;
-                            projectiles += 1;
-                            sustain += 1;
-                        }
-                    }
-                });
-                //now check with bootstrap messages
-                if (dps < 2) $('#lowDPS').show();
-                if (support < 1) $('#lowSupport').show();
-                if (tanks < 1) $('#lowTanks').show();
-                if (block < 2) $('#lowBlock').show();
-                if (builder > 1) $('#highBuild').show();
-                if (hitscan < 1) $('#lowHitscan').show();
-                if (projectiles < 1) $('#lowProjectile').show();
-                if (sustain < 2) $('#lowSustain').show();
-                if (mobility < 2) $('#lowMobility').show();
-                if (tanks > 3) $('#highTanks').show();
-            }
-        } */
-    }]);
+                        if (pick == "Genji") {*/
