@@ -3,14 +3,12 @@
  */
 //TODO: Put correct character counters in click functions
 //TODO: Look over/Implement Jayson recs
-//TODO: Create bootstrap messages based on enemy team comp: "Enemy Team ahs a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
+//TODO: Create bootstrap messages based on enemy team comp: "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 //TODO: ULT synergies
-//TODO Create array of each hero of each type (json), so I can see if Zen is the only healer. OR make it a variable in the counters.json
-//TODO: Create a json file of heroes and their counters
-//TODO: Convert to angular
+//TODO: Create array of each hero of each type (json), so I can see if Zen is the only healer. OR make it a variable in the counters.json
 //TODO: Include an angular directive (?)
 //TODO: Make readme.md
-//TODO: Get ng-hide or ng-show working, or revert back to jQuery hide and show. Email professor?
+//TODO: Get ng-hide or ng-show working, or revert back to jQuery hide and show. Talk to professor.
 
 /* global $ */
 angular.module("app", [])
@@ -28,38 +26,38 @@ angular.module("app", [])
         const GREEN = "#33e84b";
         const RED = "#ef3232";
 
-        var enemy_dps = 0;
-        var enemy_tanks = 0;
-        var enemy_support = 0;
-        var enemy_projectiles = 0;
-        var enemy_hitscan = 0;
-        var enemy_mobility = 0;
-        var enemy_sustain = 0;
-        var enemy_beam = 0;
-        var enemy_block = 0;
-        var enemy_builder = 0;
-
-        var ally_dps = 0;
-        var ally_tanks = 0;
-        var ally_support = 0;
-        var ally_projectiles = 0;
-        var ally_hitscan = 0;
-        var ally_mobility = 0;
-        var ally_sustain = 0;
-        var ally_beam = 0;
-        var ally_block = 0;
-        var ally_builder = 0;
+        $scope.testVar = true;
 
         $scope.allHeroes = ['Genji', 'McCree', 'Pharah', 'Reaper', 'Soldier76', 'Sombra', 'Tracer', 'Bastion', 'Hanzo', 'Junkrat', 'Mei', 'Torbjorn', 'Widowmaker', 'D.Va', 'Reinhardt', 'Roadhog', 'Winston', 'Zarya', 'Ana', 'Lucio', 'Mercy', 'Symmetra', 'Zenyatta'];
 
         hideAlerts("ally");
         hideAlerts("enemy");
 
+        $counterService.getCounters().then(function(res) {
+            $scope.counters = res.data;
+        });
+
+        $scope.toggleTest = function() {
+            $scope.testVar = !$scope.testVar;
+            console.log($scope.testVar);
+            //$scope.$applyAsync();
+        };
 
         $scope.heroSelected = function(hero, team) {
             //call reset variables function
 
             if (team == "enemy") {
+                var enemy_dps = 0;
+                var enemy_tanks = 0;
+                var enemy_support = 0;
+                var enemy_projectiles = 0;
+                var enemy_hitscan = 0;
+                var enemy_mobility = 0;
+                var enemy_sustain = 0;
+                var enemy_beam = 0;
+                var enemy_block = 0;
+                var enemy_builder = 0;
+
                 hideAlerts('enemy');
                 $('.enemyTeam option:selected').each(function () {
                     hero = $(this).text();
@@ -209,6 +207,17 @@ angular.module("app", [])
                 if (enemy_tanks > 3) $('#highTanksEnemy').show();
             }
             else if(team == 'ally') {
+                var ally_dps = 0;
+                var ally_tanks = 0;
+                var ally_support = 0;
+                var ally_projectiles = 0;
+                var ally_hitscan = 0;
+                var ally_mobility = 0;
+                var ally_sustain = 0;
+                var ally_beam = 0;
+                var ally_block = 0;
+                var ally_builder = 0;
+
                 hideAlerts('ally');
                 $('.allyTeam option:selected').each(function () {
                     hero = $(this).text();
@@ -359,11 +368,6 @@ angular.module("app", [])
                 if (ally_tanks > 3) $('#highTanks').show();
             }
         };
-
-
-        $counterService.getCounters().then(function(res) {
-            $scope.counters = res.data;
-        });
 
         $scope.displayCounters = function(clickedHero){
             reset();

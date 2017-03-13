@@ -30,6 +30,10 @@
     </div>
 </div>
 
+<div>
+    <p ng-show="owControl.testVar == true">If testVar is true, you should see me.</p> <button ng-click="toggleTest()">Toggle</button>
+</div>
+
 <!-- COUNTERS -->
 <div class="row">
     <div class="col-lg-2 text-center clickable genji" ng-click="displayCounters('genji')">Genji<p></p><img src="http://vignette2.wikia.nocookie.net/overwatch/images/0/04/Genji_portrait.png/revision/latest?cb=20160429040512" class="img-rounded" width="200" height="200"></div>
@@ -175,182 +179,68 @@
 <div class="row">
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly1"
+                        ng-change="heroSelected(selectedHeroAlly1, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly2"
+                        ng-change="heroSelected(selectedHeroAlly2, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly3"
+                        ng-change="heroSelected(selectedHeroAlly3, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly4"
+                        ng-change="heroSelected(selectedHeroAlly4, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly5"
+                        ng-change="heroSelected(selectedHeroAlly5, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
     <div class="col-lg-2 text-center">
         <div class="form-group allyTeam">
-            <select class="form-control">
-                <option>-Select-</option>
-                <option>Genji</option>
-                <option>McCree</option>
-                <option>Pharah</option>
-                <option>Reaper</option>
-                <option>Soldier76</option>
-                <option>Sombra</option>
-                <option>Tracer</option>
-                <option>Bastion</option>
-                <option>Hanzo</option>
-                <option>Junkrat</option>
-                <option>Mei</option>
-                <option>Torbjorn</option>
-                <option>Widowmaker</option>
-                <option>D.Va</option>
-                <option>Reinhardt</option>
-                <option>Roadhog</option>
-                <option>Winston</option>
-                <option>Zarya</option>
-                <option>Ana</option>
-                <option>Lucio</option>
-                <option>Mercy</option>
-                <option>Symmetra</option>
-                <option>Zenyatta</option>
-            </select>
+            <form name="heroForm">
+                <select class="form-control"
+                        ng-options="option for option in allHeroes"
+                        ng-model="selectedHeroAlly6"
+                        ng-change="heroSelected(selectedHeroAlly6, 'ally')">
+                </select>
+            </form>
         </div>
     </div>
 </div>
