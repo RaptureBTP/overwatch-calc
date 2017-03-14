@@ -6,7 +6,7 @@
 //TODO: Create bootstrap messages based on enemy team comp: "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 //TODO: ULT synergies
 //TODO: Create array of each hero of each type (json), so I can see if Zen is the only healer. OR make it a variable in the counters.json
-//TODO: Include an angular directive
+//TODO: Add screenshot to readme.md
 
 /* global $ */
 angular.module("app", [])
@@ -18,6 +18,11 @@ angular.module("app", [])
             }
         };
         return counterService;
+    })
+    .directive('jumbotronDirective', function(){
+        return {
+            template: '<div class="jumbotron text-center"> <h1>Overwatch Planner</h1> <p>Use this page to plan your team composition and hero counters for your next game!</p> </div>'
+        };
     })
     .controller('overwatchController', ['$scope', 'counterService', function($scope, $counterService) {
         const BLUE = "#4286f4";
