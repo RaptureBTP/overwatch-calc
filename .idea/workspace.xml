@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="469ff307-d6f3-4724-b501-80de259d0b3e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/overwatchController.js" afterPath="$PROJECT_DIR$/overwatchController.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,11 +25,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="202">
+              <caret line="243" column="20" lean-forward="true" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
               <folding>
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -37,8 +38,8 @@
       <file leaf-file-name="overwatchController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/overwatchController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="968">
-              <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+            <state relative-caret-position="9482">
+              <caret line="431" column="8" lean-forward="false" selection-start-line="431" selection-start-column="8" selection-end-line="431" selection-end-column="8" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -69,11 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&quot;#4286f4&quot;</find>
-      <find>&quot;#ef3232&quot;</find>
-      <find>owControl</find>
-      <find>overw</find>
-      <find>overwatchC</find>
       <find>proje</find>
       <find>mobility</find>
       <find>hitscan</find>
@@ -85,29 +81,27 @@
       <find>support</find>
       <find>pick</find>
       <find>enemy_dps</find>
+      <find>enemy_tanks</find>
+      <find>enemy_support</find>
       <find>enemy_projectiles</find>
-      <find>enemy_mobility</find>
       <find>enemy_hitscan</find>
+      <find>enemy_mobility</find>
       <find>enemy_sustain</find>
       <find>enemy_beam</find>
       <find>enemy_block</find>
       <find>enemy_builder</find>
+      <find>ally_dps</find>
+      <find>ally_tanks</find>
+      <find>ally_support</find>
+      <find>ally_projectiles</find>
+      <find>ally_hitscan</find>
+      <find>ally_mobility</find>
+      <find>ally_sustain</find>
+      <find>ally_beam</find>
+      <find>ally_block</find>
+      <find>ally_builder</find>
     </findStrings>
     <replaceStrings>
-      <replace>GREEN</replace>
-      <replace>BLUE</replace>
-      <replace>RED</replace>
-      <replace>enemy_dps</replace>
-      <replace>enemy_projectiles</replace>
-      <replace>enemy_mobility</replace>
-      <replace>enemy_hitsan</replace>
-      <replace>enemy_hitscan</replace>
-      <replace>enemy_sustain</replace>
-      <replace>enemy_beam</replace>
-      <replace>enemy_block</replace>
-      <replace>enemy_builder</replace>
-      <replace>enemy_tank</replace>
-      <replace>enemy_tanks</replace>
       <replace>enemy_support</replace>
       <replace>hero</replace>
       <replace>ally_dps</replace>
@@ -118,6 +112,26 @@
       <replace>ally_beam</replace>
       <replace>ally_block</replace>
       <replace>ally_builder</replace>
+      <replace>$scope.enemy_dps</replace>
+      <replace>$scope.enemy_tanks</replace>
+      <replace>$scope.enemy_support</replace>
+      <replace>$scope.enemy_projectiles</replace>
+      <replace>$scope.enemy_hitscan</replace>
+      <replace>$scope.enemy_mobility</replace>
+      <replace>$scope.enemy_sustain</replace>
+      <replace>$scope.enemy_beam</replace>
+      <replace>$scope.enemy_block</replace>
+      <replace>$scope.enemy_builder</replace>
+      <replace>$scope.ally_dps</replace>
+      <replace>$scope.ally_tanks</replace>
+      <replace>$scope.ally_support</replace>
+      <replace>$scope.ally_projectiles</replace>
+      <replace>$scope.ally_hitscan</replace>
+      <replace>$scope.ally_mobility</replace>
+      <replace>$scope.ally_sustain</replace>
+      <replace>$scope.ally_beam</replace>
+      <replace>$scope.ally_block</replace>
+      <replace>$scope.ally_builder</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -252,12 +266,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489098989135</updated>
-      <workItem from="1489098993482" duration="31008000" />
+      <workItem from="1489098993482" duration="35693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31008000" />
+    <option name="totallyTimeSpent" value="35693000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,16 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/overwatchController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/counters.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2486">
@@ -335,13 +339,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/overwatchController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9482">
+          <caret line="431" column="8" lean-forward="false" selection-start-line="431" selection-start-column="8" selection-end-line="431" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="202">
+          <caret line="243" column="20" lean-forward="true" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
           <folding>
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#8;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h3#0;n#div#0;n#div#11;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#10;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

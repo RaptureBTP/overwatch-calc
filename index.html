@@ -19,7 +19,7 @@
     </style>
 </head>
 
-<body ng-controller="overwatchController as owControl">
+<body ng-controller="overwatchController">
 <div class="jumbotron text-center">
     <h1>Overwatch Planner</h1>
     <p>Use this page to plan your team composition and hero counters for your next game!</p>
@@ -28,10 +28,6 @@
     <div class="col-lg-12 text-center">
         <h2>Hero Counters</h2>
     </div>
-</div>
-
-<div>
-    <p ng-show="owControl.testVar == true">If testVar is true, you should see me.</p> <button ng-click="toggleTest()">Toggle</button>
 </div>
 
 <!-- COUNTERS -->
@@ -156,16 +152,16 @@
 <div class="row">
     <div class="col-lg-2"></div>
     <div class="enemyAlerts col-lg-8">
-        <div class="alert alert-success" id="lowDPSEnemy"> <strong>Sweet!</strong> Enemy team has low damage.</div>
-        <div class="alert alert-success" id="lowSupportEnemy"><strong>Sweet!</strong> Enemy team has low support heroes.</div>
-        <div class="alert alert-success" id="lowTanksEnemy"><strong>Sweet!</strong> Enemy team has few tanks.</div>
-        <div class="alert alert-success" id="lowSustainEnemy"><strong>Sweet!</strong> Enemy team has low sustainability. Punish their foolishness.</div>
-        <div class="alert alert-info" id="lowHitscanEnemy"><strong>Heads Up!</strong> Enemy team has few hitscan heroes.</div>
-        <div class="alert alert-info" id="lowProjectileEnemy"><strong>Heads Up!</strong> Enemy team has few projectile heroes.</div>
-        <div class="alert alert-info" id="lowBlockEnemy"><strong>Heads Up!</strong> Enemy team has low blocking potential.</div>
-        <div class="alert alert-info" id="highBuildEnemy"><strong>Heads Up!</strong> Enemy team has too many builders.</div>
-        <div class="alert alert-info" id="lowMobilityEnemy"><strong>Heads Up!</strong> Enemy team has low mobility.</div>
-        <div class="alert alert-info" id="highTanksEnemy"><strong>Heads Up!</strong> Enemy team has 4 or more tanks.</div>
+        <div class="alert alert-success" id="lowDPSEnemy" ng-show="enemy_dps < 2 && selectionMadeEnemy == true"> <strong>Sweet!</strong> Enemy team has low damage.</div>
+        <div class="alert alert-success" id="lowSupportEnemy" ng-show="enemy_support < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low support heroes.</div>
+        <div class="alert alert-success" id="lowTanksEnemy" ng-show="enemy_tanks < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has few tanks.</div>
+        <div class="alert alert-success" id="lowSustainEnemy" ng-show="enemy_sustain < 2 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low sustainability. Punish their foolishness.</div>
+        <div class="alert alert-info" id="lowHitscanEnemy" ng-show="enemy_hitscan < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few hitscan heroes.</div>
+        <div class="alert alert-info" id="lowProjectileEnemy" ng-show="enemy_projectiles < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few projectile heroes.</div>
+        <div class="alert alert-info" id="lowBlockEnemy" ng-show="enemy_block < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low blocking potential.</div>
+        <div class="alert alert-info" id="highBuildEnemy" ng-show="enemy_builder > 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has too many builders.</div>
+        <div class="alert alert-info" id="lowMobilityEnemy" ng-show="enemy_mobility < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low mobility.</div>
+        <div class="alert alert-info" id="highTanksEnemy" ng-show="enemy_tanks > 3 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has 4 or more tanks.</div>
     </div>
     <div class="col-lg-2"></div>
 </div>
@@ -249,16 +245,16 @@
 <div class="row">
     <div class="col-lg-2"></div>
     <div class="allyAlerts col-lg-8">
-        <div class="alert alert-danger" id="lowDPS"> <strong>Danger!</strong> Not enough damage.</div>
-        <div class="alert alert-danger" id="lowSupport"><strong>Danger!</strong> Not enough support heroes. </div>
-        <div class="alert alert-danger" id="lowTanks"><strong>Danger!</strong> Not enough tanks.</div>
-        <div class="alert alert-danger" id="lowSustain"><strong>Danger!</strong> Low sustainability. Consider heroes who can heal or provide health.</div>
-        <div class="alert alert-warning" id="lowHitscan"><strong>Warning!</strong> Few hitscan heroes - at least one hitscan is recommended.</div>
-        <div class="alert alert-warning" id="lowProjectile"><strong>Warning!</strong> Few projectile heroes - at least one projectile is recommended.</div>
-        <div class="alert alert-warning" id="lowBlock"><strong>Warning!</strong> Not enough blocking potential.</div>
-        <div class="alert alert-warning" id="highBuild"><strong>Warning!</strong> Too many builders.</div>
-        <div class="alert alert-warning" id="lowMobility"><strong>Warning!</strong> Low team mobility.</div>
-        <div class="alert alert-warning" id="highTanks"><strong>Warning!</strong> 4 or more tanks is not recommended.</div>
+        <div class="alert alert-danger" id="lowDPS" ng-show="ally_dps < 2 && selectionMadeAlly == true"> <strong>Danger!</strong> Not enough damage.</div>
+        <div class="alert alert-danger" id="lowSupport" ng-show="ally_support < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough support heroes. </div>
+        <div class="alert alert-danger" id="lowTanks" ng-show="ally_tanks < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough tanks.</div>
+        <div class="alert alert-danger" id="lowSustain" ng-show="ally_sustain < 2 && selectionMadeAlly == true"><strong>Danger!</strong> Low sustainability. Consider heroes who can heal or provide health.</div>
+        <div class="alert alert-warning" id="lowHitscan" ng-show="ally_hitscan < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few hitscan heroes - at least one hitscan is recommended.</div>
+        <div class="alert alert-warning" id="lowProjectile" ng-show="ally_projectiles < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few projectile heroes - at least one projectile is recommended.</div>
+        <div class="alert alert-warning" id="lowBlock" ng-show="ally_block < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Not enough blocking potential.</div>
+        <div class="alert alert-warning" id="highBuild" ng-show="ally_builder > 1 && selectionMadeAlly == true"><strong>Warning!</strong> Too many builders.</div>
+        <div class="alert alert-warning" id="lowMobility" ng-show="ally_mobility < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Low team mobility.</div>
+        <div class="alert alert-warning" id="highTanks" ng-show="ally_tanks > 3 && selectionMadeAlly == true"><strong>Warning!</strong> 4 or more tanks is not recommended.</div>
     </div>
     <div class="col-lg-2"></div>
 </div>
