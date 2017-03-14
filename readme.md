@@ -19,7 +19,7 @@ The design of this project is intended for multiple monitor set-ups, such that t
 * Display ally and enemy team Ultimate Ability synergies.
 
 #### Screenshots:
-Color coding counter example:
+* Color coding counter example:
 ![Counters by color](https://github.com/RaptureBTP/overwatch-calc/blob/master/example1.PNG)
-Team composition example
+* Team composition example
 ![Enemy and Ally team composition with alerts](https://github.com/RaptureBTP/overwatch-calc/blob/master/example2.PNG)
