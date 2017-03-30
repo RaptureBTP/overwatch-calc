@@ -1,0 +1,10 @@
+{
+  "name": "OW_Counter_server",
+  "version": "0.0.1",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "express": "^4.11.0",
+    "nconf": "^0.8.4",
+    "winston": "^2.3.1"
+  }
+}
