@@ -18,6 +18,20 @@ To see these in action, run ```node server.js``` from the command line.
 
 **winston**: winston is used for logging purposes. The current push (3/30/17) contains a owLogs.log file from my testing created by winston. Each time you run the server, this file will be updated.
 
+## Mongo Assignment:
+The latest build also includes implementation of a Mongo database. As of now, the HTML does not list the results, but the server console does.
+
+To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"_id" : 1, "character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {"_id" : 2, "character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
+Note that using ```character``` to define the hero name is important to GET that hero's notes.
+
+
+To Read a document, traverse to localhost:port/api/v1/hero where ```hero``` is a given hero name.
+
+To Update a document, traverse to localhost:port/api/v1/hero.json where ```hero``` is a given hero name and the request body includes the data you want updated, i.e. ```{text: 'Avoid the Nanoblade!'}```
+
+To Delete a document, traverse to localhost:port/api/v1/delete/hero where ```hero``` is a given hero name.
+
+To get a List of all documents, traverse to localhost:port/api/v1/notes.json
 #### Features:
 * Color-coded representation of each heroes counters and 'countered-by'
 * Images for use of quick selection, rather than trying to remember a heroes name (for new players)
@@ -27,6 +41,8 @@ To see these in action, run ```node server.js``` from the command line.
 * Update hero counters and 'countered-by' after researching and consulting other players
 * Display specific hero-based tips based on enemy team composition, i.e. "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 * Display ally and enemy team Ultimate Ability synergies.
+* Allow filters to List specific heroes.
+* Update HTML/Angular to display notes information.
 
 #### Screenshots:
 * Color coding counter example:

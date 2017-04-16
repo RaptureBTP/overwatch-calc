@@ -8,6 +8,9 @@ var winston = require('winston');
 var fs    = require('fs');
 var nconf = require('nconf');
 var path    = require("path");
+var rest = require('./notesRest'); //TODO: Create notesRest Restful file
+const WEB = `${__dirname}`;
+
 
 nconf.argv()
     .env();
@@ -31,6 +34,13 @@ try {
         else console.log("User defined port invalid or outside of range".red);
     }
     else{
+        app.use('/api/v1', rest);
+
+        //Handle 404's
+        // app.get('*', function (req, res) {
+        //     res.status(404).sendFile(`${WEB}/404.html`);
+        // });
+
         app.listen(nconf.get('defaultPort'));
         //app.listen(3000);
         //app.listen(49449499494949);
