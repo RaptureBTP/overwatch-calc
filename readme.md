@@ -18,10 +18,10 @@ To see these in action, run ```node server.js``` from the command line.
 
 **winston**: winston is used for logging purposes. The current push (3/30/17) contains a owLogs.log file from my testing created by winston. Each time you run the server, this file will be updated.
 
-## Mongo Assignment:
-The latest build also includes implementation of a Mongo database. As of now, the HTML does not list the results, but the server console does.
+## SQLite Assignment:
+The latest build also includes implementation of a sqlite3 database. As of now, the HTML does not list the results, but the server console does.
 
-To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"_id" : 1, "character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {"_id" : 2, "character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
+To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {"character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
 Note that using ```character``` to define the hero name is important to GET that hero's notes.
 
 
