@@ -3,11 +3,10 @@
  */
 //CRUDL for tasks stored on MongoDB
 
-let mongo = require('mongodb').MongoClient;
-let ObjectID = require('mongodb').ObjectID;
-const URL = `mongodb://127.0.0.1:27017/overwatchNotes`;
-let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog poop","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
-let sample2 = [{"text" : "finish list","done" : false},{"text" : "create counters","done" : false}];
+//let mongo = require('mongodb').MongoClient;
+//let ObjectID = require('mongodb').ObjectID;
+var mysql      = require('mysql');
+//const URL = `mongodb://127.0.0.1:27017/overwatchNotes`;
 
 exports.create = function(data, callbackFunc) {
     mongo.connect(URL, function (err, db) {
