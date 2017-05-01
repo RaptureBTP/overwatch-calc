@@ -6,8 +6,8 @@
 let mongo = require('mongodb').MongoClient;
 let ObjectID = require('mongodb').ObjectID;
 const URL = `mongodb://127.0.0.1:27017/overwatchNotes`;
-let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog poop","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
-let sample2 = [{"text" : "finish list","done" : false},{"text" : "create counters","done" : false}];
+//let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog poop","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
+//let sample2 = [{"text" : "finish list","done" : false},{"text" : "create counters","done" : false}];
 
 exports.create = function(data, callbackFunc) {
     mongo.connect(URL, function (err, db) {
@@ -29,7 +29,7 @@ exports.read = function(hero, callbackFunc) {
 
         db.collection('notes').findOne({ character : hero}, {}, function(err, result) { //new ObjectID(id)
             if (err) throw err;
-            console.log('in read()');
+            //console.log('in read()');
             console.log(result);
             //callbackFunc(err, result);
             db.close();
@@ -46,7 +46,7 @@ exports.update = function(hero, data, callbackFunc) {
                 {$set: data},
                 function(err, result) {
                     if(err) throw err;
-                    console.log(result);
+                    //console.log(result);
                     db.close();
                 }
             )
@@ -60,7 +60,7 @@ exports.delete = function(hero, callbackFunc) {
 
         db.collection('notes').deleteOne(
                 {character : hero}, function(err, result) {
-                    console.log('in delete()');
+                    console.log('Deleted ' + hero);
                     db.close();
                 }
             )
@@ -72,7 +72,7 @@ exports.list = function(callbackFunc) {
         if (err) throw err;
 
         db.collection('notes').find().forEach(function (result) {
-            console.log('In List()');
+            //console.log('In List()');
             console.log(result);
             db.close();
         })

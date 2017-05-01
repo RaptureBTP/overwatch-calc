@@ -25,11 +25,11 @@ To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init wi
 Note that using ```character``` to define the hero name is important to GET that hero's notes.
 
 
-To Read a document, traverse to localhost:port/api/v1/hero where ```hero``` is a given hero name.
+To Read a document, traverse to localhost:port/api/v1/notes/hero where ```hero``` is a given hero name.
 
-To Update a document, traverse to localhost:port/api/v1/hero.json where ```hero``` is a given hero name and the request body includes the data you want updated, i.e. ```{text: 'Avoid the Nanoblade!'}```
+To Update a document, traverse to localhost:port/api/v1/notes/hero.json where ```hero``` is a given hero name and the request body includes the data you want updated, i.e. ```{"text": "Avoid the Nanoblade!"}```
 
-To Delete a document, traverse to localhost:port/api/v1/delete/hero where ```hero``` is a given hero name.
+To Delete a document, traverse to localhost:port/api/v1/notes/delete/hero where ```hero``` is a given hero name.
 
 To get a List of all documents, traverse to localhost:port/api/v1/notes.json
 #### Features:
