@@ -20,7 +20,7 @@ exports.create = function(data, callbackFunc) {
             stmt.finalize();
         });
 
-        console.log("Created the following in ./owDB :");
+        console.log("DB contains the following in ./owDB :");
         db.each("SELECT rowid AS id, character, info FROM owNotes", function(err, row) {
             console.log(row.id + ": " + row.character + " : " + row.info);
         });

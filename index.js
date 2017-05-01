@@ -8,7 +8,7 @@ var winston = require('winston');
 var fs    = require('fs');
 var nconf = require('nconf');
 var path    = require("path");
-var rest = require('./notesRest'); //TODO: Create notesRest Restful file
+var rest = require('./notesRest');
 const WEB = `${__dirname}`;
 
 
@@ -42,19 +42,18 @@ try {
         // });
 
         app.listen(nconf.get('defaultPort'));
-        //app.listen(3000);
-        //app.listen(49449499494949);
         console.log("Running at Port " + nconf.get('defaultPort'));
     }
 }
 catch (err) {
     //console.log('Error'.red);
-    var myErr = err.toString();
+    let myErr = err.toString();
+    winston.log('info', myErr);
     console.log(myErr.red);
-    winston.log(myErr);
+    //winston.log('warning', myErr);
 }
 
 //console.log('Error: Not enough time in the day'.red); // outputs red text
-winston.log('Test!');
+//winston.log('info', 'Test!');
 winston.log('info', 'Hello log files!');
-winston.info('Hello again logs');
+winston.info('Hello again, logs');
