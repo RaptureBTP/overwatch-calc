@@ -55,7 +55,6 @@
         <div class="col-md-2 text-center clickable symmetra img-rounded" ng-click="displayCounters('symmetra')">Symmetra<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/symmetra/hero-select-portrait.png" class="img-rounded"></div>
         <div class="col-md-2 text-center clickable zen img-rounded" ng-click="displayCounters('zen')">Zenyatta<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/zenyatta/hero-select-portrait.png" class="img-rounded"></div>
     </div>
-</div>
 <br>
 <hr />
 <!-- TEAM COMP -->
@@ -72,7 +71,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
             <form name="heroForm">
                 <select class="form-control enemyTeam"
@@ -83,7 +82,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -94,7 +93,8 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
                 <form name="heroForm">
                     <select class="form-control"
@@ -105,7 +105,7 @@
                 </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -116,7 +116,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -127,7 +127,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group enemyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -141,8 +141,8 @@
 </div>
 <!-- ENEMY ALERTS -->
 <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="enemyAlerts col-lg-8">
+    <div class="col-md-3"></div>
+    <div class="enemyAlerts col-md-6">
         <div class="alert alert-success" id="lowDPSEnemy" ng-show="enemy_dps < 2 && selectionMadeEnemy == true"> <strong>Sweet!</strong> Enemy team has low damage.</div>
         <div class="alert alert-success" id="lowSupportEnemy" ng-show="enemy_support < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low support heroes.</div>
         <div class="alert alert-success" id="lowTanksEnemy" ng-show="enemy_tanks < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has few tanks.</div>
@@ -154,17 +154,17 @@
         <div class="alert alert-info" id="lowMobilityEnemy" ng-show="enemy_mobility < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low mobility.</div>
         <div class="alert alert-info" id="highTanksEnemy" ng-show="enemy_tanks > 3 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has 4 or more tanks.</div>
     </div>
-    <div class="col-lg-2"></div>
+    <div class="col-md-3"></div>
 </div>
 
 <!-- ALLY TEAM -->
 <div class="row">
-    <div class="lg-col-12">
+    <div class="md-col-12">
         <h3 class="text-center" style="padding:25px;color:blue">Ally Team</h3>
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -175,7 +175,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -186,7 +186,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -197,7 +197,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -208,7 +208,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -219,7 +219,7 @@
             </form>
         </div>
     </div>
-    <div class="col-lg-2 text-center">
+    <div class="col-md-2 text-center">
         <div class="form-group allyTeam">
             <form name="heroForm">
                 <select class="form-control"
@@ -234,8 +234,8 @@
 
 <!-- ALLY ALERTS -->
 <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="allyAlerts col-lg-8">
+    <div class="col-md-3"></div>
+    <div class="allyAlerts col-md-6">
         <div class="alert alert-danger" id="lowDPS" ng-show="ally_dps < 2 && selectionMadeAlly == true"> <strong>Danger!</strong> Not enough damage.</div>
         <div class="alert alert-danger" id="lowSupport" ng-show="ally_support < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough support heroes. </div>
         <div class="alert alert-danger" id="lowTanks" ng-show="ally_tanks < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough tanks.</div>
@@ -247,7 +247,8 @@
         <div class="alert alert-warning" id="lowMobility" ng-show="ally_mobility < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Low team mobility.</div>
         <div class="alert alert-warning" id="highTanks" ng-show="ally_tanks > 3 && selectionMadeAlly == true"><strong>Warning!</strong> 4 or more tanks is not recommended.</div>
     </div>
-    <div class="col-lg-2"></div>
+    <div class="col-md-2"></div>
+</div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
