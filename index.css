@@ -1,0 +1,9 @@
+.jumbotron {
+    background-color: #b3b3ff;
+}
+.clickable {
+    cursor: pointer;
+}
+.genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{
+    padding: 15px;
+}

@@ -5,18 +5,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <style>
-        .jumbotron {
-            background-color: #b3b3ff;
-        }
-        .clickable {
-            cursor: pointer;
-        }
-        .genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{
-            padding: 15px;
-        }
-    </style>
+    <!--<style>-->
+        <!--.jumbotron {-->
+            <!--background-color: #b3b3ff;-->
+        <!--}-->
+        <!--.clickable {-->
+            <!--cursor: pointer;-->
+        <!--}-->
+        <!--.genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{-->
+            <!--padding: 15px;-->
+        <!--}-->
+    <!--</style>-->
 </head>
 
 <body ng-controller="overwatchController">
@@ -33,12 +34,12 @@
 
 <!-- COUNTERS -->
 <div class="row">
-    <div class="col-lg-2 text-center clickable genji" ng-click="displayCounters('genji')">Genji<p></p><img src="http://vignette2.wikia.nocookie.net/overwatch/images/0/04/Genji_portrait.png/revision/latest?cb=20160429040512" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable mccree" ng-click="displayCounters('mccree')">McCree<p></p><img src="http://vignette3.wikia.nocookie.net/overwatch/images/f/f3/Mccree_portrait.png/revision/latest?cb=20160429041214" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable pharah" ng-click="displayCounters('pharah')">Pharah<p></p><img src="https://www.furiouspaul.com/overwatch/images/pharah/pharah.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable reaper" ng-click="displayCounters('reaper')">Reaper<p></p><img src="https://www.furiouspaul.com/overwatch/images/reaper/reaper.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable soldier76" ng-click="displayCounters('soldier76')">Soldier 76<p></p><img src="http://vignette3.wikia.nocookie.net/overwatch/images/c/c3/Soldier76_portrait.png/revision/latest?cb=20160429041023" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable sombra" ng-click="displayCounters('sombra')">Sombra<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/thumb/c/c5/Sombra-portrait.png/525px-Sombra-portrait.png?version=9bbba1f8073e8610f699fc86d34fa38d" class="img-rounded" width="200" height="200"></div>
+    <div class="col-lg-2 text-center clickable genji" ng-click="displayCounters('genji')">Genji<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/genji/hero-select-portrait.png" class="img-rounded"></div>
+    <div class="col-lg-2 text-center clickable mccree" ng-click="displayCounters('mccree')">McCree<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/mccree/hero-select-portrait.png" class="img-rounded" ></div>
+    <div class="col-lg-2 text-center clickable pharah" ng-click="displayCounters('pharah')">Pharah<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/pharah/hero-select-portrait.png" class="img-rounded" ></div>
+    <div class="col-lg-2 text-center clickable reaper" ng-click="displayCounters('reaper')">Reaper<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/reaper/hero-select-portrait.png" ></div>
+    <div class="col-lg-2 text-center clickable soldier76" ng-click="displayCounters('soldier76')">Soldier 76<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/soldier-76/hero-select-portrait.png" class="img-rounded"></div>
+    <div class="col-lg-2 text-center clickable sombra" ng-click="displayCounters('sombra')">Sombra<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/sombra/hero-select-portrait.png" class="img-rounded"></div>
 </div>
 <div class="row">
     <div class="col-lg-2 text-center clickable tracer" ng-click="displayCounters('tracer')">Tracer<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/8/81/20160620015403%21Tracer-portrait.png?version=b6c1eb91bdacd60468cbe824c0569ee7" class="img-rounded" width="200" height="200"></div>
@@ -61,7 +62,7 @@
     <div class="col-lg-1"></div>
     <div class="col-lg-2 text-center clickable ana" ng-click="displayCounters('ana')">Ana<p></p><img src="http://vignette3.wikia.nocookie.net/overwatch/images/f/fd/Ana_portrait.png/revision/latest?cb=20160727054536" class="img-rounded" width="200" height="200"></div>
     <div class="col-lg-2 text-center clickable lucio" ng-click="displayCounters('lucio')">Lucio<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/8/8c/20160620004208%21Lucio-portrait.png?version=b79312103e4703e2834180b41681e4da" class="img-rounded" width="200" height="200"></div>
-    <div class="col-lg-2 text-center clickable mercy" ng-click="displayCounters('mercy')">Mercy<p></p><img src="http://vignette1.wikia.nocookie.net/overwatch/images/c/cd/Mercy_portrait.png/revision/latest?cb=20160429042205" class="img-rounded" width="200" height="200"></div>
+    <div class="col-lg-2 text-center clickable mercy" ng-click="displayCounters('mercy')">Mercy<p></p><img src="https://vignette3.wikia.nocookie.net/overwatch/images/4/44/Mercy_Spray_-_Battle_Ready.png/revision/latest?cb=20160610183251" class="img-rounded" width="200" height="200"></div>
     <div class="col-lg-2 text-center clickable symmetra" ng-click="displayCounters('symmetra')">Symmetra<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/1/18/20160620015055%21Symmetra-portrait.png?version=2b00bb528994aca441529f4611726845g" class="img-rounded" width="200" height="200"></div>
     <div class="col-lg-2 text-center clickable zen" ng-click="displayCounters('zen')">Zenyatta<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/9/92/20160620015930%21Zenyatta-portrait.png?version=0284f100b532b06f60900e1cc81f6ad5" class="img-rounded" width="200" height="200"></div>
     <div class="col-lg-1"></div>

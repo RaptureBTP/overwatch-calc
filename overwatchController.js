@@ -6,13 +6,12 @@
 //TODO: Create bootstrap messages based on enemy team comp: "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 //TODO: ULT synergies
 //TODO: Create array of each hero of each type (json), so I can see if Zen is the only healer. OR make it a variable in the counters.json
-//TODO: Add screenshot to readme.md
 
 /* global $ */
 angular.module("app", [])
     .factory('counterService', function($http) {
         //HTTP requests go here
-        var counterService = {
+        let counterService = {
             getCounters: function() {
                 return $http.get('counters.json');
             }
@@ -88,135 +87,135 @@ angular.module("app", [])
         }
 
         $scope.heroSelected = function (hero, team) {
-            if (team == "enemy") {
+            if (team === "enemy") {
                 enemyRolesReset();
                 $scope.selectionMadeEnemy = true;
                 $('.enemyTeam option:selected').each(function () {
                     hero = $(this).text();
-                    if (hero != '') {
+                    if (hero !== '') {
                         console.log(hero);
                         console.log('Team: ' + team);
-                        if (hero == "Genji") {
+                        if (hero === "Genji") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_mobility += 1;
                         }
-                        else if (hero == "McCree") {
+                        else if (hero === "McCree") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_hitscan += 1;
                         }
-                        else if (hero == "Pharah") {
+                        else if (hero === "Pharah") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_mobility += 1;
                         }
-                        else if (hero == "Reaper") {
+                        else if (hero === "Reaper") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Soldier76") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero == "Sombra") {
+                        else if (hero === "Soldier76") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_hitscan += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Tracer") {
+                        else if (hero === "Sombra") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_hitscan += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Bastion") {
+                        else if (hero === "Tracer") {
+                            $scope.enemy_dps += 1;
+                            $scope.enemy_hitscan += 1;
+                            $scope.enemy_mobility += 1;
+                            $scope.enemy_sustain += 1;
+                        }
+                        else if (hero === "Bastion") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_hitscan += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Hanzo") {
+                        else if (hero === "Hanzo") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_projectiles += 1;
                         }
-                        else if (hero == "Junkrat") {
+                        else if (hero === "Junkrat") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_projectiles += 1;
                         }
-                        else if (hero == "Mei") {
+                        else if (hero === "Mei") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_beam += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_block += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Torbjorn") {
+                        else if (hero === "Torbjorn") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_builder += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Widowmaker") {
+                        else if (hero === "Widowmaker") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_hitscan += 1;
                             $scope.enemy_mobility += 1;
                         }
-                        else if (hero == "D.Va") {
+                        else if (hero === "D.Va") {
                             $scope.enemy_tanks += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_block += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Reinhardt") {
+                        else if (hero === "Reinhardt") {
                             $scope.enemy_tanks += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_block += 2;
                         }
-                        else if (hero == "Roadhog") {
+                        else if (hero === "Roadhog") {
                             $scope.enemy_tanks += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_sustain += 1;
                             $scope.enemy_dps += 1;
                         }
-                        else if (hero == "Winston") {
+                        else if (hero === "Winston") {
                             $scope.enemy_tanks += 1;
                             $scope.enemy_beam += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_block += 1;
                         }
-                        else if (hero == "Zarya") {
+                        else if (hero === "Zarya") {
                             $scope.enemy_tanks += 1;
                             $scope.enemy_dps += 1;
                             $scope.enemy_beam += 1;
                             $scope.enemy_block += 1;
                             $scope.enemy_projectiles += 1;
                         }
-                        else if (hero == "Ana") {
+                        else if (hero === "Ana") {
                             $scope.enemy_support += 1;
                             $scope.enemy_hitscan += 1;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_sustain += 2;
                         }
-                        else if (hero == "Lucio") {
+                        else if (hero === "Lucio") {
                             $scope.enemy_support += 1;
                             $scope.enemy_mobility += 2;
                             $scope.enemy_projectiles += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Mercy") {
+                        else if (hero === "Mercy") {
                             $scope.enemy_support += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_sustain += 1;
                         }
-                        else if (hero == "Symmetra") {
+                        else if (hero === "Symmetra") {
                             $scope.enemy_dps += 1;
                             $scope.enemy_mobility += 1;
                             $scope.enemy_block += 1;
                             $scope.enemy_beam += 1;
                         }
-                        else if (hero == "Zenyatta") {
+                        else if (hero === "Zenyatta") {
                             $scope.enemy_support += 1;
                             $scope.enemy_dps += 1;
                             $scope.enemy_projectiles += 1;
@@ -226,136 +225,136 @@ angular.module("app", [])
                     }
                 });
             }
-            else if (team == 'ally') {
+            else if (team === 'ally') {
                 allyRolesReset();
                 $scope.selectionMadeAlly = true;
                 $('.allyTeam option:selected').each(function () {
                     hero = $(this).text();
-                    if (hero != '') {
+                    if (hero !== '') {
                         console.log(hero);
                         console.log('Team: ' + team);
-                        if (hero == "Genji") {
+                        if (hero === "Genji") {
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_mobility += 1;
                         }
-                        else if (hero == "McCree") {
+                        else if (hero === "McCree") {
                             $scope.ally_dps += 1;
                             $scope.ally_hitscan += 1;
                         }
-                        else if (hero == "Pharah") {
+                        else if (hero === "Pharah") {
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_mobility += 1;
                         }
-                        else if (hero == "Reaper") {
+                        else if (hero === "Reaper") {
                             $scope.ally_dps += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Soldier76") {
-                            $scope.ally_dps += 1;
-                            $scope.ally_hitscan += 1;
-                            $scope.ally_mobility += 1;
-                            $scope.ally_sustain += 1;
-                        }
-                        else if (hero == "Sombra") {
+                        else if (hero === "Soldier76") {
                             $scope.ally_dps += 1;
                             $scope.ally_hitscan += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Tracer") {
+                        else if (hero === "Sombra") {
                             $scope.ally_dps += 1;
                             $scope.ally_hitscan += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Bastion") {
+                        else if (hero === "Tracer") {
+                            $scope.ally_dps += 1;
+                            $scope.ally_hitscan += 1;
+                            $scope.ally_mobility += 1;
+                            $scope.ally_sustain += 1;
+                        }
+                        else if (hero === "Bastion") {
                             $scope.ally_dps += 1;
                             $scope.ally_hitscan += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Hanzo") {
+                        else if (hero === "Hanzo") {
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
                         }
-                        else if (hero == "Junkrat") {
+                        else if (hero === "Junkrat") {
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
                         }
-                        else if (hero == "Mei") {
+                        else if (hero === "Mei") {
                             $scope.ally_dps += 1;
                             $scope.ally_beam += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_block += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Torbjorn") {
+                        else if (hero === "Torbjorn") {
                             $scope.ally_dps += 1;
                             $scope.ally_builder += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Widowmaker") {
+                        else if (hero === "Widowmaker") {
                             $scope.ally_dps += 1;
                             $scope.ally_hitscan += 1;
                             $scope.ally_mobility += 1;
                         }
-                        else if (hero == "D.Va") {
+                        else if (hero === "D.Va") {
                             $scope.ally_tanks += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_block += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Reinhardt") {
+                        else if (hero === "Reinhardt") {
                             $scope.ally_tanks += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_block += 2;
                         }
-                        else if (hero == "Roadhog") {
+                        else if (hero === "Roadhog") {
                             $scope.ally_tanks += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_sustain += 1;
                             $scope.ally_dps += 1;
                         }
-                        else if (hero == "Winston") {
+                        else if (hero === "Winston") {
                             $scope.ally_tanks += 1;
                             $scope.ally_beam += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_block += 1;
                         }
-                        else if (hero == "Zarya") {
+                        else if (hero === "Zarya") {
                             $scope.ally_tanks += 1;
                             $scope.ally_dps += 1;
                             $scope.ally_beam += 1;
                             $scope.ally_block += 1;
                             $scope.ally_projectiles += 1;
                         }
-                        else if (hero == "Ana") {
+                        else if (hero === "Ana") {
                             $scope.ally_support += 1;
                             $scope.ally_hitscan += 1;
                             $scope.ally_projectiles += 1;
                             $scope.ally_sustain += 2;
                         }
-                        else if (hero == "Lucio") {
+                        else if (hero === "Lucio") {
                             $scope.ally_support += 1;
                             $scope.ally_mobility += 2;
                             $scope.ally_projectiles += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Mercy") {
+                        else if (hero === "Mercy") {
                             $scope.ally_support += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_sustain += 1;
                         }
-                        else if (hero == "Symmetra") {
+                        else if (hero === "Symmetra") {
                             $scope.ally_dps += 1;
                             $scope.ally_mobility += 1;
                             $scope.ally_block += 1;
                             $scope.ally_beam += 1;
                             $scope.ally_builder += 1;
                         }
-                        else if (hero == "Zenyatta") {
+                        else if (hero === "Zenyatta") {
                             $scope.ally_support += 1;
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
@@ -369,13 +368,13 @@ angular.module("app", [])
         $scope.displayCounters = function (clickedHero) {
             reset();
             $('.' + clickedHero).css("background-color", BLUE);
-            for (var i = 0; i < $scope.counters.length; i++) {
-                var hero = $scope.counters[i];
-                if (hero.name == clickedHero) {
-                    for (var j = 0; j < hero.counters.length; j++) {
+            for (let i = 0; i < $scope.counters.length; i++) {
+                let hero = $scope.counters[i];
+                if (hero.name === clickedHero) {
+                    for (let j = 0; j < hero.counters.length; j++) {
                         $('.' + hero.counters[j]).css("background-color", GREEN);
                     }
-                    for (var k = 0; k < hero.counteredBy.length; k++) {
+                    for (let k = 0; k < hero.counteredBy.length; k++) {
                         $('.' + hero.counteredBy[k]).css("background-color", RED);
                     }
                 }
