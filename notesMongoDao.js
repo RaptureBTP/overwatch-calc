@@ -4,12 +4,12 @@
 //CRUDL for tasks stored on MongoDB
 
 let mongo = require('mongodb').MongoClient;
-let ObjectID = require('mongodb').ObjectID;
+//let ObjectID = require('mongodb').ObjectID;
 const URL = `mongodb://127.0.0.1:27017/overwatchNotes`;
-//let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog poop","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
+//let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
 //let sample2 = [{"text" : "finish list","done" : false},{"text" : "create counters","done" : false}];
 
-exports.create = function(data, callbackFunc) {
+exports.create = function(data) { //callbackFunc as last param?
     mongo.connect(URL, function (err, db) {
         if (err) throw err;
         console.log("Connected correctly to server");
@@ -23,21 +23,20 @@ exports.create = function(data, callbackFunc) {
     })
 };
 
-exports.read = function(hero, callbackFunc) {
+exports.read = function(hero) {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
         db.collection('notes').findOne({ character : hero}, {}, function(err, result) { //new ObjectID(id)
             if (err) throw err;
-            //console.log('in read()');
+            console.log(`${hero} notes:`);
             console.log(result);
-            //callbackFunc(err, result);
             db.close();
         });
     });
 };
 
-exports.update = function(hero, data, callbackFunc) {
+exports.update = function(hero, data) {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
@@ -45,34 +44,34 @@ exports.update = function(hero, data, callbackFunc) {
                 {character: hero},
                 {$set: data},
                 function(err, result) {
-                    if(err) throw err;
-                    //console.log(result);
+                    if(err) throw err;;
                     db.close();
                 }
-            )
+        );
+        exports.read(hero);
     })
 };
 
 
-exports.delete = function(hero, callbackFunc) {
+exports.delete = function(hero) {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
         db.collection('notes').deleteOne(
                 {character : hero}, function(err, result) {
+                    if(err) throw err;
                     console.log('Deleted ' + hero);
                     db.close();
                 }
-            )
+            );
     })
 };
 
-exports.list = function(callbackFunc) {
+exports.list = function() {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
         db.collection('notes').find().forEach(function (result) {
-            //console.log('In List()');
             console.log(result);
             db.close();
         })

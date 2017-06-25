@@ -19,6 +19,7 @@ nconf.defaults({
 
 try {
     app.use(express.static(__dirname));
+    app.use('/api/v1', rest);
 
     if(nconf.get('port')){
         if(Number.isInteger(nconf.get('port')) && (nconf.get('port') >= 0 && nconf.get('port') <= 65536)){
@@ -29,8 +30,6 @@ try {
         else console.log("User defined port invalid or outside of range".red);
     }
     else{
-        app.use('/api/v1', rest);
-
         //Handle 404's
         // app.get('*', function (req, res) {
         //     res.status(404).sendFile(`${WEB}/404.html`);
@@ -42,6 +41,6 @@ try {
 }
 catch (err) {
     //console.log('Error'.red);
-    var myErr = err.toString();
+    let myErr = err.toString();
     console.log(myErr.red);
 }
