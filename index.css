@@ -5,10 +5,9 @@
     cursor: pointer;
 }
 .row{
-    margin: 3px;
+    margin: 3px; /* to prevent tiny horiz scrollbar when between col-lg and col-md */
 }
 img {
-    /*display: table-cell;*/
     max-width: 100%;
     height: auto;
 }
