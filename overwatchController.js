@@ -28,33 +28,13 @@ angular.module("app", [])
         const GREEN = "#33e84b";
         const RED = "#ef3232";
 
-        $scope.testVar = true;
-        $scope.enemy_dps = 0;
-        $scope.enemy_tanks = 0;
-        $scope.enemy_support = 0;
-        $scope.enemy_projectiles = 0;
-        $scope.enemy_hitscan = 0;
-        $scope.enemy_mobility = 0;
-        $scope.enemy_sustain = 0;
-        $scope.enemy_beam = 0;
-        $scope.enemy_block = 0;
-        $scope.enemy_builder = 0;
-
-        $scope.ally_dps = 0;
-        $scope.ally_tanks = 0;
-        $scope.ally_support = 0;
-        $scope.ally_projectiles = 0;
-        $scope.ally_hitscan = 0;
-        $scope.ally_mobility = 0;
-        $scope.ally_sustain = 0;
-        $scope.ally_beam = 0;
-        $scope.ally_block = 0;
-        $scope.ally_builder = 0;
+        enemyRolesReset();
+        allyRolesReset();
 
         $scope.selectionMadeEnemy = false;
         $scope.selectionMadeAlly = false;
 
-        $scope.allHeroes = ['Genji', 'McCree', 'Pharah', 'Reaper', 'Soldier76', 'Sombra', 'Tracer', 'Bastion', 'Hanzo', 'Junkrat', 'Mei', 'Torbjorn', 'Widowmaker', 'D.Va', 'Reinhardt', 'Roadhog', 'Winston', 'Zarya', 'Ana', 'Lucio', 'Mercy', 'Symmetra', 'Zenyatta'];
+        $scope.allHeroes = ['Genji', 'McCree', 'Pharah', 'Reaper', 'Soldier76', 'Sombra', 'Tracer', 'Bastion', 'Hanzo', 'Junkrat', 'Mei', 'Torbjorn', 'Widowmaker', 'D.Va', 'Orisa', 'Reinhardt', 'Roadhog', 'Winston', 'Zarya', 'Ana', 'Lucio', 'Mercy', 'Symmetra', 'Zenyatta'];
 
         $counterService.getCounters().then(function (res) {
             $scope.counters = res.data;
@@ -93,135 +73,138 @@ angular.module("app", [])
                 $('.enemyTeam option:selected').each(function () {
                     hero = $(this).text();
                     if (hero !== '') {
-                        console.log(hero);
-                        console.log('Team: ' + team);
-                        if (hero === "Genji") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_mobility += 1;
+                        switch(hero) {
+                            case "Genji":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_mobility += 1;
+                                break;
+                            case "McCree":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                break;
+                            case "Pharah":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_mobility += 1;
+                                break;
+                            case "Reaper":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Soldier76":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Sombra":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Tracer":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Bastion":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Hanzo":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_projectiles += 1;
+                                break;
+                            case "Junkrat":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_projectiles += 1;
+                                break;
+                            case "Mei":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_beam += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_block += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Torbjorn":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_builder += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Widowmaker":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_mobility += 1;
+                                break;
+                            case "D.Va":
+                                $scope.enemy_tanks += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_block += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Orisa":
+                                $scope.enemy_tanks++;
+                                $scope.enemy_block += 2;
+                                break;
+                            case "Reinhardt":
+                                $scope.enemy_tanks += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_block += 2;
+                                break;
+                            case "Roadhog":
+                                $scope.enemy_tanks += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_sustain += 1;
+                                $scope.enemy_dps += 1;
+                                break;
+                            case "Winston":
+                                $scope.enemy_tanks += 1;
+                                $scope.enemy_beam += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_block += 1;
+                                break;
+                            case "Zarya":
+                                $scope.enemy_tanks += 1;
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_beam += 1;
+                                $scope.enemy_block += 1;
+                                $scope.enemy_projectiles += 1;
+                                break;
+                            case "Ana":
+                                $scope.enemy_support += 1;
+                                $scope.enemy_hitscan += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_sustain += 2;
+                                break;
+                            case "Lucio":
+                                $scope.enemy_support += 1;
+                                $scope.enemy_mobility += 2;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Mercy":
+                                $scope.enemy_support += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
+                            case "Symmetra":
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_mobility += 1;
+                                $scope.enemy_block += 1;
+                                $scope.enemy_beam += 1;
+                                break;
+                            case "Zenyatta":
+                                $scope.enemy_support += 1;
+                                $scope.enemy_dps += 1;
+                                $scope.enemy_projectiles += 1;
+                                $scope.enemy_sustain += 1;
+                                break;
                         }
-                        else if (hero === "McCree") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                        }
-                        else if (hero === "Pharah") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_mobility += 1;
-                        }
-                        else if (hero === "Reaper") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Soldier76") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Sombra") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Tracer") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Bastion") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Hanzo") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_projectiles += 1;
-                        }
-                        else if (hero === "Junkrat") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_projectiles += 1;
-                        }
-                        else if (hero === "Mei") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_beam += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_block += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Torbjorn") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_builder += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Widowmaker") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_mobility += 1;
-                        }
-                        else if (hero === "D.Va") {
-                            $scope.enemy_tanks += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_block += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Reinhardt") {
-                            $scope.enemy_tanks += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_block += 2;
-                        }
-                        else if (hero === "Roadhog") {
-                            $scope.enemy_tanks += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_sustain += 1;
-                            $scope.enemy_dps += 1;
-                        }
-                        else if (hero === "Winston") {
-                            $scope.enemy_tanks += 1;
-                            $scope.enemy_beam += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_block += 1;
-                        }
-                        else if (hero === "Zarya") {
-                            $scope.enemy_tanks += 1;
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_beam += 1;
-                            $scope.enemy_block += 1;
-                            $scope.enemy_projectiles += 1;
-                        }
-                        else if (hero === "Ana") {
-                            $scope.enemy_support += 1;
-                            $scope.enemy_hitscan += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_sustain += 2;
-                        }
-                        else if (hero === "Lucio") {
-                            $scope.enemy_support += 1;
-                            $scope.enemy_mobility += 2;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Mercy") {
-                            $scope.enemy_support += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-                        else if (hero === "Symmetra") {
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_mobility += 1;
-                            $scope.enemy_block += 1;
-                            $scope.enemy_beam += 1;
-                        }
-                        else if (hero === "Zenyatta") {
-                            $scope.enemy_support += 1;
-                            $scope.enemy_dps += 1;
-                            $scope.enemy_projectiles += 1;
-                            $scope.enemy_sustain += 1;
-                        }
-
                     }
                 });
             }
@@ -231,8 +214,6 @@ angular.module("app", [])
                 $('.allyTeam option:selected').each(function () {
                     hero = $(this).text();
                     if (hero !== '') {
-                        console.log(hero);
-                        console.log('Team: ' + team);
                         if (hero === "Genji") {
                             $scope.ally_dps += 1;
                             $scope.ally_projectiles += 1;
@@ -396,6 +377,7 @@ angular.module("app", [])
             $('.torb').css('background-color', 'transparent');
             $('.widow').css('background-color', 'transparent');
             $('.dva').css('background-color', 'transparent');
+            $('.orisa').css('background-color', 'transparent');
             $('.rein').css('background-color', 'transparent');
             $('.roadhog').css('background-color', 'transparent');
             $('.winston').css('background-color', 'transparent');

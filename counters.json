@@ -69,6 +69,11 @@
     "counteredBy": ["mei", "symmetra", "zen"]
   },
   {
+    "name": "orisa",
+    "counters": ["torb", "symmetra", "roadhog", "rein"],
+    "counteredBy": ["reaper", "sombra", "hanzo", "junkrat", "widow", "zarya"]
+  },
+  {
     "name": "rein",
     "counters": ["soldier76", "torb", "widow"],
     "counteredBy": ["reaper", "roadhog", "symmetra"]
