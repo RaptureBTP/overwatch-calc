@@ -1,5 +1,18 @@
+*{
+    font-family: Futura, Arial, sans-serif;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+h2{
+
+}
+hr{
+    border-width: 10px !important;
+}
 .jumbotron {
-    background-color: #b3b3ff;
+    background-color: #4286f4;
 }
 .clickable {
     cursor: pointer;
@@ -7,10 +20,8 @@
 .row{
     margin: 3px; /* to prevent tiny horiz scrollbar when between col-lg and col-md */
 }
-img {
-    max-width: 100%;
-    height: auto;
-}
 .genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .orisa, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{
     padding: 15px;
+    font-weight: bold;
+    font-size: large;
 }

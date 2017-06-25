@@ -20,7 +20,7 @@ angular.module("app", [])
     })
     .directive('jumbotronDirective', function(){
         return {
-            template: '<div class="jumbotron text-center"> <h1>Overwatch Planner</h1> <p>Use this page to plan your team composition and hero counters for your next game!</p> </div>'
+            template: '<div class="jumbotron text-center"> <h1>Overwatch Planner</h1> <p>Use this page to plan your team composition and hero counters for your next game!</p> <p>Click a Hero below to see who they counter and are countered by.</p> </div>'
         };
     })
     .controller('overwatchController', ['$scope', 'counterService', function($scope, $counterService) {
