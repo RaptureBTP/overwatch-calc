@@ -15,46 +15,47 @@
     <!--<h1>Overwatch Planner</h1>-->
     <!--<p>Use this page to plan your team composition and hero counters for your next game!</p>-->
 <!--</div>-->
-<div class="row">
-    <div class="col-lg-12 text-center">
-        <h2>Hero Counters</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2>Hero Counters</h2>
+        </div>
     </div>
-</div>
 
-<!-- COUNTERS -->
-<div class="row">
-    <div class="col-md-2 text-center clickable genji img-rounded" ng-click="displayCounters('genji')">Genji<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/genji/hero-select-portrait.png" class="img-rounded"></div>
-    <div class="col-md-2 text-center clickable mccree img-rounded" ng-click="displayCounters('mccree')">McCree<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/mccree/hero-select-portrait.png" class="img-rounded" ></div>
-    <div class="col-md-2 text-center clickable pharah" ng-click="displayCounters('pharah')">Pharah<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/pharah/hero-select-portrait.png" class="img-rounded" ></div>
-    <div class="col-md-2 text-center clickable reaper" ng-click="displayCounters('reaper')">Reaper<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/reaper/hero-select-portrait.png" class="img-rounded" ></div>
-    <div class="col-md-2 text-center clickable soldier76" ng-click="displayCounters('soldier76')">Soldier 76<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/soldier-76/hero-select-portrait.png" class="img-rounded"></div>
-    <div class="col-md-2 text-center clickable sombra" ng-click="displayCounters('sombra')">Sombra<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/sombra/hero-select-portrait.png" class="img-rounded"></div>
-</div>
-<div class="row">
-    <div class="col-md-2 text-center clickable tracer" ng-click="displayCounters('tracer')">Tracer<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/tracer/hero-select-portrait.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable bastion" ng-click="displayCounters('bastion')">Bastion<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/bastion/hero-select-portrait.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable hanzo" ng-click="displayCounters('hanzo')">Hanzo<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/hanzo/hero-select-portrait.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable junkrat" ng-click="displayCounters('junkrat')">Junkrat<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/9/99/20160620014452%21Junkrat-Portrait.png?version=72de0fcaac63f25dbd5c76f620304752" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable mei" ng-click="displayCounters('mei')">Mei<p></p>
-        <img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/d/d0/20160620013459%21Mei-portrait.png?version=40ac735a54eb450693a00c7371d58672" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable torb" ng-click="displayCounters('torb')">Torbjorn<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/c/c5/20160620015202%21Torbjorn-portrait.png?version=dbf02122a71df682a34c21c8c4716f5c" class="img-rounded" width="200" height="200"></div>
-</div>
-<div class="row">
-    <div class="col-md-2 text-center clickable widow" ng-click="displayCounters('widow')">Widowmaker<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/4/4c/20160620015303%21Widowmaker-portrait.png?version=66e0368bb426fb465c1d02029fbf4960" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable dva" ng-click="displayCounters('dva')">D.Va<p></p><img src="http://cdn.playbuzz.com/cdn/512a2f01-9569-48ff-9ec6-4aad5ff41208/31b507fd-8553-4be3-8b59-a6089baa0bb7.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable rein" ng-click="displayCounters('rein')">Reinhardt<p></p><img src="https://d1u1mce87gyfbn.cloudfront.net/hero/reinhardt/full-portrait.png" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable roadhog" ng-click="displayCounters('roadhog')">Roadhog<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/c/ce/20160620014751%21Roadhog-Portrait.png?version=56612863cbf63e810dc99014aaec6013" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable winston" ng-click="displayCounters('winston')">Winston<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/b/b8/20160620015550%21Winston-portrait.png?version=4ffdf3f8a2f43e2709aac6505cbb9bee" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable zarya" ng-click="displayCounters('zarya')">Zarya<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/6/6d/20160620015838%21Zarya-portrait.png?version=2475bc322d380fe25db63e2aa4e09d17" class="img-rounded" width="200" height="200"></div>
-</div>
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-2 text-center clickable ana" ng-click="displayCounters('ana')">Ana<p></p><img src="http://vignette3.wikia.nocookie.net/overwatch/images/f/fd/Ana_portrait.png/revision/latest?cb=20160727054536" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable lucio" ng-click="displayCounters('lucio')">Lucio<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/8/8c/20160620004208%21Lucio-portrait.png?version=b79312103e4703e2834180b41681e4da" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable mercy" ng-click="displayCounters('mercy')">Mercy<p></p><img src="https://vignette3.wikia.nocookie.net/overwatch/images/4/44/Mercy_Spray_-_Battle_Ready.png/revision/latest?cb=20160610183251" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable symmetra" ng-click="displayCounters('symmetra')">Symmetra<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/1/18/20160620015055%21Symmetra-portrait.png?version=2b00bb528994aca441529f4611726845g" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-2 text-center clickable zen" ng-click="displayCounters('zen')">Zenyatta<p></p><img src="https://hydra-media.cursecdn.com/overwatch.gamepedia.com/archive/9/92/20160620015930%21Zenyatta-portrait.png?version=0284f100b532b06f60900e1cc81f6ad5" class="img-rounded" width="200" height="200"></div>
-    <div class="col-md-1"></div>
+    <!-- COUNTERS -->
+    <div class="row">
+        <div class="col-md-2 text-center clickable genji img-rounded" ng-click="displayCounters('genji')">Genji<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/genji/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable mccree img-rounded" ng-click="displayCounters('mccree')">McCree<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/mccree/hero-select-portrait.png" class="img-rounded" ></div>
+        <div class="col-md-2 text-center clickable pharah img-rounded" ng-click="displayCounters('pharah')">Pharah<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/pharah/hero-select-portrait.png" class="img-rounded" ></div>
+        <div class="col-md-2 text-center clickable reaper img-rounded" ng-click="displayCounters('reaper')">Reaper<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/reaper/hero-select-portrait.png" class="img-rounded" ></div>
+        <div class="col-md-2 text-center clickable soldier76 img-rounded" ng-click="displayCounters('soldier76')">Soldier 76<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/soldier-76/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable sombra img-rounded" ng-click="displayCounters('sombra')">Sombra<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/sombra/hero-select-portrait.png" class="img-rounded"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center clickable tracer img-rounded" ng-click="displayCounters('tracer')">Tracer<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/tracer/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable bastion img-rounded" ng-click="displayCounters('bastion')">Bastion<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/bastion/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable hanzo img-rounded" ng-click="displayCounters('hanzo')">Hanzo<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/hanzo/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable junkrat img-rounded" ng-click="displayCounters('junkrat')">Junkrat<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/junkrat/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable mei img-rounded" ng-click="displayCounters('mei')">Mei<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/mei/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable torb img-rounded" ng-click="displayCounters('torb')">Torbjorn<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/torbjorn/hero-select-portrait.png" class="img-rounded"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center clickable widow img-rounded" ng-click="displayCounters('widow')">Widowmaker<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/widowmaker/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable dva img-rounded" ng-click="displayCounters('dva')">D.Va<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/dva/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable orisa img-rounded" ng-click="displayCounters('orisa')">Orisa<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/orisa/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable rein img-rounded" ng-click="displayCounters('rein')">Reinhardt<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/reinhardt/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable roadhog img-rounded" ng-click="displayCounters('roadhog')">Roadhog<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/roadhog/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable winston img-rounded" ng-click="displayCounters('winston')">Winston<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/winston/hero-select-portrait.png" class="img-rounded"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center clickable zarya img-rounded" ng-click="displayCounters('zarya')">Zarya<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/zarya/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable ana img-rounded" ng-click="displayCounters('ana')">Ana<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/ana/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable lucio img-rounded" ng-click="displayCounters('lucio')">Lucio<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/lucio/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable mercy img-rounded" ng-click="displayCounters('mercy')">Mercy<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/mercy/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable symmetra img-rounded" ng-click="displayCounters('symmetra')">Symmetra<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/symmetra/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-2 text-center clickable zen img-rounded" ng-click="displayCounters('zen')">Zenyatta<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/zenyatta/hero-select-portrait.png" class="img-rounded"></div>
+        <div class="col-md-1"></div>
+    </div>
 </div>
 <br>
 
