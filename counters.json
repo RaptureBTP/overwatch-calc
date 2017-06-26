@@ -1,12 +1,12 @@
 [ {
-  "name": "genji",
-  "counters": ["hanzo", "bastion", "mercy", "torb", "zen", "soldier76", "widow", "mccree"],
-  "counteredBy": ["mei", "roadhog", "symmetra", "zarya", "winston"]
+    "name": "genji",
+    "counters": ["bastion", "mercy", "torb", "zen", "soldier76", "widow"],
+    "counteredBy": ["mei", "roadhog", "symmetra", "zarya", "winston", "mccree"]
   },
   {
     "name": "mccree",
-    "counters": ["reaper", "pharah", "mercy", "tracer", "zen", "winston", "sombra"],
-    "counteredBy": ["genji", "widow", "rein", "roadhog"]
+    "counters": ["reaper", "pharah", "mercy", "tracer", "zen", "winston", "sombra", "genji"],
+    "counteredBy": ["widow", "rein", "roadhog", "ana"]
   },
   {
     "name": "pharah",
@@ -15,38 +15,38 @@
   },
   {
     "name": "reaper",
-    "counters": ["bastion", "mei", "winston", "zen", "roadhog", "rein", "sombra"],
-    "counteredBy": ["pharah", "junkrat", "mccree", "zarya"]
+    "counters": ["winston", "zen", "roadhog", "rein", "sombra", "orisa", "dva"],
+    "counteredBy": ["pharah", "junkrat", "zarya", "mccree"]
   },
   {
     "name": "soldier76",
     "counters": ["bastion", "torb", "mercy", "pharah", "roadhog", "lucio", "zarya", "sombra"],
-    "counteredBy": ["pharah", "junkrat", "mccree", "zarya"]
+    "counteredBy": ["pharah", "zarya", "rein", "genji"]
   },
   {
     "name": "sombra",
-    "counters": ["bastion", "tracer", "torb", "zen", "roadhog", "rein", "zarya", "lucio", "symmetra", "mercy"],
+    "counters": ["bastion", "tracer", "torb", "roadhog", "rein", "zarya", "lucio", "mercy", "orisa"],
     "counteredBy": ["hanzo", "junkrat", "mccree", "reaper", "mei", "soldier76"]
   },
   {
     "name": "tracer",
     "counters": ["soldier76", "widow", "bastion", "zen", "roadhog", "rein", "hanzo", "ana", "mercy"],
-    "counteredBy": ["sombra", "torb", "mccree", "winston", "junkrat"]
+    "counteredBy": ["sombra", "torb", "mccree", "winston", "junkrat", "mei"]
   },
   {
     "name": "bastion",
     "counters": ["torb", "rein", "lucio", "mercy", "winston"],
-    "counteredBy": ["genji", "sombra", "pharah", "reaper", "junkrat", "soldier76", "tracer", "widow", "roadhog", "hanzo"]
+    "counteredBy": ["genji", "sombra", "pharah", "junkrat", "soldier76", "tracer", "widow", "roadhog", "hanzo", "ana"]
   },
   {
     "name": "hanzo",
-    "counters": ["torb", "bastion", "soldier76", "sombra"],
-    "counteredBy": ["genji", "dva", "widow"]
+    "counters": ["torb", "bastion", "soldier76", "sombra", "orisa"],
+    "counteredBy": ["dva", "widow"]
   },
   {
     "name": "junkrat",
-    "counters": ["torb", "mei", "bastion", "rein"],
-    "counteredBy": ["mccree", "pharah", "widow"]
+    "counters": ["torb", "mei", "bastion", "rein", "orisa"],
+    "counteredBy": ["pharah", "widow"]
   },
   {
     "name": "mei",
@@ -56,17 +56,17 @@
   {
     "name": "torb",
     "counters": ["genji", "lucio", "tracer"],
-    "counteredBy": ["junkrat", "pharah", "widow"]
+    "counteredBy": ["junkrat", "pharah", "widow", "orisa", "zarya"]
   },
   {
     "name": "widow",
-    "counters": ["bastion", "torb", "pharah"],
+    "counters": ["bastion", "torb", "pharah", "orisa", "mercy", "mccree"],
     "counteredBy": ["dva", "genji", "winston"]
   },
   {
     "name": "dva",
     "counters": ["pharah", "rein", "widow"],
-    "counteredBy": ["mei", "symmetra", "zen"]
+    "counteredBy": ["mei", "symmetra", "zen", "sombra", "reaper"]
   },
   {
     "name": "orisa",
@@ -75,33 +75,33 @@
   },
   {
     "name": "rein",
-    "counters": ["soldier76", "torb", "widow"],
-    "counteredBy": ["reaper", "roadhog", "symmetra"]
+    "counters": ["soldier76", "torb", "widow", "mccree"],
+    "counteredBy": ["reaper", "roadhog", "symmetra", "orisa"]
   },
   {
     "name": "roadhog",
-    "counters": ["pharah", "rein", "tracer"],
-    "counteredBy": ["reaper", "genji", "dva"]
+    "counters": ["pharah", "rein", "tracer", "genji", "mccree"],
+    "counteredBy": ["reaper", "dva", "orisa"]
   },
   {
     "name": "winston",
     "counters": ["genji", "hanzo", "widow"],
-    "counteredBy": ["reaper", "roadhog", "pharah"]
+    "counteredBy": ["reaper", "roadhog", "pharah", "mcree"]
   },
   {
     "name": "zarya",
-    "counters": ["dva", "genji", "winston"],
-    "counteredBy": ["reaper", "roadhog", "pharah"]
+    "counters": ["dva", "genji", "winston", "orisa", "torb"],
+    "counteredBy": ["reaper", "roadhog", "pharah", "sombra"]
   },
   {
     "name": "ana",
-    "counters": ["lucio", "mercy", "zen"],
+    "counters": ["lucio", "mercy", "zen", "bastion", "mccree"],
     "counteredBy": ["reaper", "genji", "tracer"]
   },
   {
     "name": "lucio",
     "counters": ["dva", "reaper", "winston"],
-    "counteredBy": ["mei", "mccree", "pharah"]
+    "counteredBy": ["mei", "pharah"]
   },
   {
     "name": "mercy",
@@ -116,6 +116,6 @@
   {
     "name": "zen",
     "counters": ["dva", "roadhog", "winston"],
-    "counteredBy": ["hanzo", "tracer", "widow"]
+    "counteredBy": ["hanzo", "tracer", "widow", "genji", "mccree"]
   }
 ]
