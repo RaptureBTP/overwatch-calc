@@ -5,7 +5,7 @@ body {
     background-color: lightgrey;
 }
 img{
-    max-width: 55%;
+    max-width: 55% !important;
     height: auto;
 }
 hr{
@@ -28,10 +28,13 @@ hr{
 .clickable {
     cursor: pointer;
 }
-.compContainer{
+.lightClrContainer{
     border: 4px groove #4286f4;
     margin: 6px;
     background-color: #f2f2f2;
+}
+.loadBtn{
+    text-align: center;
 }
 .genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .orisa, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{
     padding: 15px;

@@ -67,6 +67,10 @@ angular.module("app", [])
             $scope.ally_builder = 0;
         }
 
+        $scope.test =function(msg){
+            console.log(msg);
+        };
+
         $scope.heroSelected = function (hero, team) {
             if (team === "enemy") {
                 enemyRolesReset();
