@@ -1,7 +1,7 @@
 [ {
     "name": "genji",
     "counters": ["bastion", "mercy", "torb", "zen", "soldier76", "widow"],
-    "counteredBy": ["mei", "roadhog", "symmetra", "zarya", "winston", "mccree"]
+    "counteredBy": ["mei", "roadhog", "symmetra", "zarya", "winston", "mccree", "sombra"]
   },
   {
     "name": "mccree",
@@ -25,8 +25,8 @@
   },
   {
     "name": "sombra",
-    "counters": ["bastion", "tracer", "torb", "roadhog", "rein", "zarya", "lucio", "mercy", "orisa"],
-    "counteredBy": ["hanzo", "junkrat", "mccree", "reaper", "mei", "soldier76"]
+    "counters": ["bastion", "tracer", "torb", "roadhog", "rein", "zarya", "lucio", "mercy", "orisa", "genji", "dva"],
+    "counteredBy": ["hanzo", "junkrat", "mccree", "reaper", "mei", "soldier76", "winston"]
   },
   {
     "name": "tracer",
@@ -45,18 +45,18 @@
   },
   {
     "name": "junkrat",
-    "counters": ["torb", "mei", "bastion", "rein", "orisa", "reaper"],
+    "counters": ["torb", "mei", "bastion", "rein", "orisa", "reaper", "sombra"],
     "counteredBy": ["pharah", "widow"]
   },
   {
     "name": "mei",
     "counters": ["genji", "dva", "tracer", "winston", "soldier76"],
-    "counteredBy": ["junkrat", "pharah", "widow"]
+    "counteredBy": ["junkrat", "pharah", "widow", "sombra"]
   },
   {
     "name": "torb",
     "counters": ["genji", "lucio", "tracer"],
-    "counteredBy": ["junkrat", "pharah", "widow", "orisa", "zarya"]
+    "counteredBy": ["junkrat", "pharah", "widow", "orisa", "zarya", "sombra"]
   },
   {
     "name": "widow",
@@ -76,12 +76,12 @@
   {
     "name": "rein",
     "counters": ["soldier76", "torb", "widow", "mccree"],
-    "counteredBy": ["reaper", "roadhog", "symmetra", "orisa"]
+    "counteredBy": ["reaper", "roadhog", "symmetra", "orisa", "sombra"]
   },
   {
     "name": "roadhog",
     "counters": ["pharah", "rein", "tracer", "genji", "mccree"],
-    "counteredBy": ["reaper", "dva", "orisa"]
+    "counteredBy": ["reaper", "dva", "orisa", "sombra"]
   },
   {
     "name": "winston",
@@ -101,12 +101,12 @@
   {
     "name": "lucio",
     "counters": ["dva", "reaper", "winston"],
-    "counteredBy": ["mei", "pharah"]
+    "counteredBy": ["mei", "pharah", "sombra"]
   },
   {
     "name": "mercy",
     "counters": [],
-    "counteredBy": ["tracer", "mccree", "widow", "genji", "reaper", "soldier76"]
+    "counteredBy": ["tracer", "mccree", "widow", "genji", "reaper", "soldier76", "sombra"]
   },
   {
     "name": "symmetra",
