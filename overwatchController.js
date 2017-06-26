@@ -70,7 +70,8 @@ angular.module("app", [])
         }
 
         $scope.test =function(msg){
-            console.log(msg);
+            //console.log(msg);
+            console.log($scope.newNoteText);
         };
 
         $scope.getBooks = function(){
