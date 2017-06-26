@@ -37,6 +37,8 @@ angular.module("app", [])
         $scope.allHeroes = ['Genji', 'McCree', 'Pharah', 'Reaper', 'Soldier76', 'Sombra', 'Tracer', 'Bastion', 'Hanzo', 'Junkrat', 'Mei', 'Torbjorn', 'Widowmaker', 'D.Va', 'Orisa',
             'Reinhardt', 'Roadhog', 'Winston', 'Zarya', 'Ana', 'Lucio', 'Mercy', 'Symmetra', 'Zenyatta'];
 
+        $scope.notes = [];
+
         $counterService.getCounters().then(function (res) {
             $scope.counters = res.data;
         });
@@ -70,6 +72,14 @@ angular.module("app", [])
         $scope.test =function(msg){
             console.log(msg);
         };
+
+        $scope.getBooks = function(){
+            $http.get('/notes.json').then(displayNotes);
+        };
+
+        function displayNotes(notes){
+            $scope.notes = notes.data;
+        }
 
         $scope.heroSelected = function (hero, team) {
             if (team === "enemy") {
