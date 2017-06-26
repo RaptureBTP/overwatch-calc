@@ -56,198 +56,200 @@
         <div class="col-md-2 text-center clickable zen img-rounded" ng-click="displayCounters('zen')">Zenyatta<p></p><img src="https://blzgdapipro-a.akamaihd.net/hero/zenyatta/hero-select-portrait.png" class="img-rounded"></div>
     </div>
 <br>
-<hr />
-<!-- TEAM COMP -->
-<div class="row">
-    <div class="lg-col-12 text-center">
-        <h2>Team Composition</h2>
-    </div>
-</div>
 
-<!-- ENEMY TEAM -->
-<div class="row">
-    <div class="lg-col-12">
-        <h3 class="text-center" style="padding:25px;color:red">Enemy Team</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
-            <form name="heroForm">
-                <select class="form-control enemyTeam"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroEnemy1"
-                        ng-change="heroSelected(selectedHeroEnemy1, 'enemy')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroEnemy2"
-                        ng-change="heroSelected(selectedHeroEnemy2, 'enemy')">
-                </select>
-            </form>
+<div class="compContainer">
+    <!-- TEAM COMP -->
+    <div class="row">
+        <div class="lg-col-12 text-center">
+            <h2>Team Composition</h2>
         </div>
     </div>
 
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
+    <!-- ENEMY TEAM -->
+    <div class="row">
+        <div class="lg-col-12">
+            <h3 class="text-center" style="padding:25px;color:red">Enemy Team</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
+                <form name="heroForm">
+                    <select class="form-control enemyTeam"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroEnemy1"
+                            ng-change="heroSelected(selectedHeroEnemy1, 'enemy')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
                 <form name="heroForm">
                     <select class="form-control"
                             ng-options="option for option in allHeroes"
-                            ng-model="selectedHeroEnemy3"
-                            ng-change="heroSelected(selectedHeroEnemy3, 'enemy')">
+                            ng-model="selectedHeroEnemy2"
+                            ng-change="heroSelected(selectedHeroEnemy2, 'enemy')">
                     </select>
                 </form>
+            </div>
         </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroEnemy4"
-                        ng-change="heroSelected(selectedHeroEnemy4, 'enemy')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroEnemy5"
-                        ng-change="heroSelected(selectedHeroEnemy5, 'enemy')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group enemyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroEnemy6"
-                        ng-change="heroSelected(selectedHeroEnemy6, 'enemy')">
-                </select>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- ENEMY ALERTS -->
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="enemyAlerts col-md-6">
-        <div class="alert alert-success" id="lowDPSEnemy" ng-show="enemy_dps < 2 && selectionMadeEnemy == true"> <strong>Sweet!</strong> Enemy team has low damage.</div>
-        <div class="alert alert-success" id="lowSupportEnemy" ng-show="enemy_support < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low support heroes.</div>
-        <div class="alert alert-success" id="lowTanksEnemy" ng-show="enemy_tanks < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has few tanks.</div>
-        <div class="alert alert-success" id="lowSustainEnemy" ng-show="enemy_sustain < 2 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low sustainability. Punish their foolishness.</div>
-        <div class="alert alert-info" id="lowHitscanEnemy" ng-show="enemy_hitscan < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few hitscan heroes.</div>
-        <div class="alert alert-info" id="lowProjectileEnemy" ng-show="enemy_projectiles < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few projectile heroes.</div>
-        <div class="alert alert-info" id="lowBlockEnemy" ng-show="enemy_block < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low blocking potential.</div>
-        <div class="alert alert-info" id="highBuildEnemy" ng-show="enemy_builder > 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has too many builders.</div>
-        <div class="alert alert-info" id="lowMobilityEnemy" ng-show="enemy_mobility < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low mobility.</div>
-        <div class="alert alert-info" id="highTanksEnemy" ng-show="enemy_tanks > 3 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has 4 or more tanks.</div>
-    </div>
-    <div class="col-md-3"></div>
-</div>
 
-<!-- ALLY TEAM -->
-<div class="row">
-    <div class="md-col-12">
-        <h3 class="text-center" style="padding:25px;color:blue">Ally Team</h3>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly1"
-                        ng-change="heroSelected(selectedHeroAlly1, 'ally')">
-                </select>
-            </form>
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
+                    <form name="heroForm">
+                        <select class="form-control"
+                                ng-options="option for option in allHeroes"
+                                ng-model="selectedHeroEnemy3"
+                                ng-change="heroSelected(selectedHeroEnemy3, 'enemy')">
+                        </select>
+                    </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroEnemy4"
+                            ng-change="heroSelected(selectedHeroEnemy4, 'enemy')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroEnemy5"
+                            ng-change="heroSelected(selectedHeroEnemy5, 'enemy')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group enemyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroEnemy6"
+                            ng-change="heroSelected(selectedHeroEnemy6, 'enemy')">
+                    </select>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly2"
-                        ng-change="heroSelected(selectedHeroAlly2, 'ally')">
-                </select>
-            </form>
+    <!-- ENEMY ALERTS -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="enemyAlerts col-md-6">
+            <div class="alert alert-success" id="lowDPSEnemy" ng-show="enemy_dps < 2 && selectionMadeEnemy == true"> <strong>Sweet!</strong> Enemy team has low damage.</div>
+            <div class="alert alert-success" id="lowSupportEnemy" ng-show="enemy_support < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low support heroes.</div>
+            <div class="alert alert-success" id="lowTanksEnemy" ng-show="enemy_tanks < 1 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has few tanks.</div>
+            <div class="alert alert-success" id="lowSustainEnemy" ng-show="enemy_sustain < 2 && selectionMadeEnemy == true"><strong>Sweet!</strong> Enemy team has low sustainability. Punish their foolishness.</div>
+            <div class="alert alert-info" id="lowHitscanEnemy" ng-show="enemy_hitscan < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few hitscan heroes.</div>
+            <div class="alert alert-info" id="lowProjectileEnemy" ng-show="enemy_projectiles < 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has few projectile heroes.</div>
+            <div class="alert alert-info" id="lowBlockEnemy" ng-show="enemy_block < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low blocking potential.</div>
+            <div class="alert alert-info" id="highBuildEnemy" ng-show="enemy_builder > 1 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has too many builders.</div>
+            <div class="alert alert-info" id="lowMobilityEnemy" ng-show="enemy_mobility < 2 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has low mobility.</div>
+            <div class="alert alert-info" id="highTanksEnemy" ng-show="enemy_tanks > 3 && selectionMadeEnemy == true"><strong>Heads Up!</strong> Enemy team has 4 or more tanks.</div>
         </div>
+        <div class="col-md-3"></div>
     </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly3"
-                        ng-change="heroSelected(selectedHeroAlly3, 'ally')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly4"
-                        ng-change="heroSelected(selectedHeroAlly4, 'ally')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly5"
-                        ng-change="heroSelected(selectedHeroAlly5, 'ally')">
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="col-md-2 text-center">
-        <div class="form-group allyTeam">
-            <form name="heroForm">
-                <select class="form-control"
-                        ng-options="option for option in allHeroes"
-                        ng-model="selectedHeroAlly6"
-                        ng-change="heroSelected(selectedHeroAlly6, 'ally')">
-                </select>
-            </form>
-        </div>
-    </div>
-</div>
 
-<!-- ALLY ALERTS -->
-<div class="row">
-    <div class="col-md-3"></div>
-    <div class="allyAlerts col-md-6">
-        <div class="alert alert-danger" id="lowDPS" ng-show="ally_dps < 2 && selectionMadeAlly == true"> <strong>Danger!</strong> Not enough damage.</div>
-        <div class="alert alert-danger" id="lowSupport" ng-show="ally_support < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough support heroes. </div>
-        <div class="alert alert-danger" id="lowTanks" ng-show="ally_tanks < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough tanks.</div>
-        <div class="alert alert-danger" id="lowSustain" ng-show="ally_sustain < 2 && selectionMadeAlly == true"><strong>Danger!</strong> Low sustainability. Consider heroes who can heal or provide health.</div>
-        <div class="alert alert-warning" id="lowHitscan" ng-show="ally_hitscan < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few hitscan heroes - at least one hitscan is recommended.</div>
-        <div class="alert alert-warning" id="lowProjectile" ng-show="ally_projectiles < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few projectile heroes - at least one projectile is recommended.</div>
-        <div class="alert alert-warning" id="lowBlock" ng-show="ally_block < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Not enough blocking potential.</div>
-        <div class="alert alert-warning" id="highBuild" ng-show="ally_builder > 1 && selectionMadeAlly == true"><strong>Warning!</strong> Too many builders.</div>
-        <div class="alert alert-warning" id="lowMobility" ng-show="ally_mobility < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Low team mobility.</div>
-        <div class="alert alert-warning" id="highTanks" ng-show="ally_tanks > 3 && selectionMadeAlly == true"><strong>Warning!</strong> 4 or more tanks is not recommended.</div>
+    <!-- ALLY TEAM -->
+    <div class="row">
+        <div class="md-col-12">
+            <h3 class="text-center" style="padding:25px;color:blue">Ally Team</h3>
+        </div>
     </div>
-    <div class="col-md-2"></div>
+    <div class="row">
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly1"
+                            ng-change="heroSelected(selectedHeroAlly1, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly2"
+                            ng-change="heroSelected(selectedHeroAlly2, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly3"
+                            ng-change="heroSelected(selectedHeroAlly3, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly4"
+                            ng-change="heroSelected(selectedHeroAlly4, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly5"
+                            ng-change="heroSelected(selectedHeroAlly5, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2 text-center">
+            <div class="form-group allyTeam">
+                <form name="heroForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="selectedHeroAlly6"
+                            ng-change="heroSelected(selectedHeroAlly6, 'ally')">
+                    </select>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALLY ALERTS -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="allyAlerts col-md-6">
+            <div class="alert alert-danger" id="lowDPS" ng-show="ally_dps < 2 && selectionMadeAlly == true"> <strong>Danger!</strong> Not enough damage.</div>
+            <div class="alert alert-danger" id="lowSupport" ng-show="ally_support < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough support heroes. </div>
+            <div class="alert alert-danger" id="lowTanks" ng-show="ally_tanks < 1 && selectionMadeAlly == true"><strong>Danger!</strong> Not enough tanks.</div>
+            <div class="alert alert-danger" id="lowSustain" ng-show="ally_sustain < 2 && selectionMadeAlly == true"><strong>Danger!</strong> Low sustainability. Consider heroes who can heal or provide health.</div>
+            <div class="alert alert-warning" id="lowHitscan" ng-show="ally_hitscan < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few hitscan heroes - at least one hitscan is recommended.</div>
+            <div class="alert alert-warning" id="lowProjectile" ng-show="ally_projectiles < 1 && selectionMadeAlly == true"><strong>Warning!</strong> Few projectile heroes - at least one projectile is recommended.</div>
+            <div class="alert alert-warning" id="lowBlock" ng-show="ally_block < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Not enough blocking potential.</div>
+            <div class="alert alert-warning" id="highBuild" ng-show="ally_builder > 1 && selectionMadeAlly == true"><strong>Warning!</strong> Too many builders.</div>
+            <div class="alert alert-warning" id="lowMobility" ng-show="ally_mobility < 2 && selectionMadeAlly == true"><strong>Warning!</strong> Low team mobility.</div>
+            <div class="alert alert-warning" id="highTanks" ng-show="ally_tanks > 3 && selectionMadeAlly == true"><strong>Warning!</strong> 4 or more tanks is not recommended.</div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 </div>
 
