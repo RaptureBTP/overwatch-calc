@@ -23,7 +23,7 @@ angular.module("app", [])
             template: '<div class="jumbotron text-center"> <h1>Overwatch Planner</h1> <p>Use this page to plan your team composition and hero counters for your next game!</p> <p>Click a Hero below to see who they counter and are countered by.</p> </div>'
         };
     })
-    .controller('overwatchController', ['$scope', 'counterService', function($scope, $counterService) {
+    .controller('overwatchController', ['$scope', 'counterService', '$http', function($scope, $counterService, $http) {
         const BLUE = "#4286f4";
         const GREEN = "#33e84b";
         const RED = "#ef3232";
@@ -74,12 +74,15 @@ angular.module("app", [])
             console.log($scope.newNoteText);
         };
 
-        $scope.getBooks = function(){
-            $http.get('/notes.json').then(displayNotes);
+        $scope.getNotes = function(){
+            console.log("In getNotes");
+            $http.get('api/v1/notes.json').then(displayNotes);
         };
 
         function displayNotes(notes){
+            console.log("In display notes");
             $scope.notes = notes.data;
+            console.log($scope.notes);
         }
 
         $scope.heroSelected = function (hero, team) {

@@ -49,8 +49,23 @@ router.delete('/notes/delete/:hero', function(req, res) {
 
 //List
 router.get('/notes.json', function(req, res) {
-    task.list();
-    res.status(200).redirect('../../index.html');
+    task.list(function (err, notes){
+        if(err) throw err;
+        res.status(200).send(notes);
+    });
+    //res.status(200).redirect('../../index.html');
 });
+
+// router.get('/books', function (req, res) {
+//     mongoDAO.findAll(function(err, books) {
+//         if(err) {
+//             throw err;
+//         }
+//
+//         res.status(200).send(books);
+//     });
+//
+// });
+
 
 module.exports = router;

@@ -67,13 +67,30 @@ exports.delete = function(hero) {
     })
 };
 
-exports.list = function() {
+exports.list = function(callbackFunc) {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
-        db.collection('notes').find().forEach(function (result) {
-            console.log(result);
+        // db.collection('notes').find().forEach(function (result) {
+        //     console.log(result);
+        //     db.close();
+        // });
+
+        db.collection('notes').find({}, {_id: 0}).toArray(function(err, items) {
+            if(err) {
+                throw err;
+            }
+            console.log(items);
+            if(callbackFunc) callbackFunc(err, items);
             db.close();
-        })
+        });
+
+        // db.collection(booksCollection).find({}, {_id: 0}).toArray(function(err, items) {
+        //     if(err) {
+        //         throw err;
+        //     }
+        //     if(callbackFunc) callbackFunc(err, items);
+        //     db.close();
+        // });
     })
 };
