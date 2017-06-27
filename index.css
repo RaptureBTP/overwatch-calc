@@ -14,7 +14,6 @@ hr{
 th, td, .alert, .loadBtn{
     text-align: center;
 }
-
 .jumbotron {
     background-color: #5492f5;
     /*background-color: grey;*/
@@ -32,6 +31,15 @@ th, td, .alert, .loadBtn{
 }
 .clickable {
     cursor: pointer;
+}
+.glyphicon-plus {
+    display: inline-block !important;
+    top: 20%;
+    margin: -8px;
+    vertical-align: middle;
+}
+.glyph-container{
+    height: 35px;
 }
 .lightClrContainer{
     border: 4px groove #4286f4;
