@@ -252,11 +252,33 @@
     </div>
 
     <div class="lightClrContainer">
-        <h2 class="text-center" style="padding:20px;">Notes</h2>
+        <h2 class="text-center" style="padding:20px; margin: 10px;">Notes</h2>
         <div class="row">
             <div class="col-md-5"></div>
             <div class="col-md-2 loadBtn"><button ng-click="getNotes()">Load Notes</button></div>
             <div class="col-md-5"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="displayedNotes table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Hero</th>
+                            <th>Note</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="note in notes">
+                                <td class="charName">{{note.character}}</td>
+                                <td>{{note.text}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
         </div>
         <div class="row">
             <div class="col-md-4"></div>

@@ -11,6 +11,10 @@ img{
 hr{
     border: 3px solid #4286f4 !important;
 }
+th, td, .alert, .loadBtn{
+    text-align: center;
+}
+
 .jumbotron {
     background-color: #5492f5;
     /*background-color: grey;*/
@@ -19,11 +23,12 @@ hr{
 .row{
     margin: 3px; /* to prevent tiny horiz scrollbar when between col-lg and col-md */
 }
+.charName{
+    text-transform: capitalize;
+    text-align: center;
+}
 .enemyTeam, .allyTeam{
     border-style: ridge;
-}
-.alert{
-    text-align: center;
 }
 .clickable {
     cursor: pointer;
@@ -32,9 +37,6 @@ hr{
     border: 4px groove #4286f4;
     margin: 6px;
     background-color: #f2f2f2;
-}
-.loadBtn{
-    text-align: center;
 }
 .genji, .mccree, .pharah, .reaper, .soldier76, .sombra, .tracer, .bastion, .hanzo, .junkrat, .mei, .torb, .widow, .dva, .orisa, .rein, .roadhog, .winston, .zarya, .ana, .lucio, .mercy, .symmetra, .zen{
     padding: 15px;
