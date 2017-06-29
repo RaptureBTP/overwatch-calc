@@ -50,4 +50,5 @@ To get a List of all documents, traverse to localhost:port/api/v1/notes.json OR 
 ![Extended](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example2.PNG)
 * Team composition example
 ![Enemy and Ally team composition with alerts](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example3.PNG)
+* Loaded notes from Mongo database
 ![Loaded notes from Mongo database](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example4.PNG)
