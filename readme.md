@@ -29,7 +29,8 @@ To Update a document, traverse to localhost:port/api/v1/notes/hero.json where ``
 
 To Delete a document, traverse to localhost:port/api/v1/notes/delete/hero where ```hero``` is a given hero name.
 
-To get a List of all documents, traverse to localhost:port/api/v1/notes.json
+To get a List of all documents, traverse to localhost:port/api/v1/notes.json OR click the "Load Notes" button.
+
 #### Features:
 * Color-coded representation of each heroes counters and 'countered-by'
 * Images for use of quick selection, rather than trying to remember a heroes name (for new players)
@@ -40,10 +41,12 @@ To get a List of all documents, traverse to localhost:port/api/v1/notes.json
 * Display specific hero-based tips based on enemy team composition, i.e. "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 * Display ally and enemy team Ultimate Ability synergies.
 * Allow filters to List specific heroes.
-* Update HTML/Angular to display notes information.
+* Update HTML/Angular to allow updating of notes information.
 
 #### Screenshots:
 * Color coding counter example:
-![Counters by color](https://github.com/RaptureBTP/overwatch-calc/blob/master/example1.PNG)
+![Counters by color](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example1.PNG)
+![Extended](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example2.PNG)
 * Team composition example
-![Enemy and Ally team composition with alerts](https://github.com/RaptureBTP/overwatch-calc/blob/master/example2.PNG)
+![Enemy and Ally team composition with alerts](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example3.PNG)
+![Loaded notes from Mongo database](https://github.com/RaptureBTP/overwatch-calc/blob/master/new_example4.PNG)
