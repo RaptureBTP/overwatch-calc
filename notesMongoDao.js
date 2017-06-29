@@ -4,6 +4,7 @@
 //CRUDL for tasks stored on MongoDB
 
 let mongo = require('mongodb').MongoClient;
+let mongodb = require('mongodb');
 //let ObjectID = require('mongodb').ObjectID;
 const URL = `mongodb://127.0.0.1:27017/overwatchNotes`;
 //let sample = [{"text" : "buy groceries","done" : false},{"text" : "pay kids to pick up dog","done" : false},{"text": "use id on the plus sign","done" : true},{"text" : "task","done" : false}];
@@ -53,14 +54,14 @@ exports.update = function(hero, data) {
 };
 
 
-exports.delete = function(hero) {
+exports.delete = function(id) {
     mongo.connect(URL, function(err, db) {
         if (err) throw err;
 
         db.collection('notes').deleteOne(
-                {character : hero}, function(err, result) {
+                {_id: new mongodb.ObjectID(id)}, function(err, result) {
                     if(err) throw err;
-                    console.log('Deleted ' + hero);
+                    console.log('Deleted ' + id);
                     db.close();
                 }
             );
@@ -76,7 +77,8 @@ exports.list = function(callbackFunc) {
         //     db.close();
         // });
 
-        db.collection('notes').find({}, {_id: 0}).toArray(function(err, items) {
+        //db.collection('notes').find({}, {_id: 0}).toArray(function(err, items) {
+        db.collection('notes').find({}).toArray(function(err, items) {
             if(err) {
                 throw err;
             }

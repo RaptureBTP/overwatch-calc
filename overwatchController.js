@@ -33,6 +33,7 @@ angular.module("app", [])
 
         $scope.selectionMadeEnemy = false;
         $scope.selectionMadeAlly = false;
+        $scope.notesLoaded = false;
 
         $scope.allHeroes = ['Genji', 'McCree', 'Pharah', 'Reaper', 'Soldier76', 'Sombra', 'Tracer', 'Bastion', 'Hanzo', 'Junkrat', 'Mei', 'Torbjorn', 'Widowmaker', 'D.Va', 'Orisa',
             'Reinhardt', 'Roadhog', 'Winston', 'Zarya', 'Ana', 'Lucio', 'Mercy', 'Symmetra', 'Zenyatta'];
@@ -83,7 +84,15 @@ angular.module("app", [])
             console.log("In display notes");
             $scope.notes = notes.data;
             console.log($scope.notes);
+            $scope.notesLoaded = true;
         }
+
+        $scope.deleteNotes = function(id){
+            //console.log("In delete notes.");
+            //console.log(id);
+            //console.log(hero);
+            $http.delete('api/v1/notes/delete/' + id).then($scope.getNotes);
+        };
 
         $scope.heroSelected = function (hero, team) {
             if (team === "enemy") {

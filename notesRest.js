@@ -40,11 +40,14 @@ router.put('/notes/update/:hero.json', function(req, res) {
 });
 
 //Delete
-router.delete('/notes/delete/:hero', function(req, res) {
-    let hero = req.params.hero;
-    task.delete(hero);
+// router.delete('/notes/delete/:hero', function(req, res) {
+router.delete('/notes/delete/:id', function(req, res) {
+    let id = req.params.id;
+    //let hero = req.params.hero;
+    console.log("In router.delete, hope we delete entry with id " + id);
+    task.delete(id);
     //res.status(200).redirect('../../index.html');
-    res.status(200).send(`Deleted ${hero} notes`);
+    res.status(200).send(`Deleted note with id ${id}`);
 });
 
 //List
