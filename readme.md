@@ -19,7 +19,7 @@ To see these in action, run ```node index.js``` from the command line.
 ## Mongo:
 The latest build also includes implementation of a Mongo database. As of now, the HTML does not list the results, but the server console does.
 
-To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"_id" : 1, "character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {"_id" : 2, "character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
+To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {""character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
 Note that using ```character``` to define the hero name is important to GET that hero's notes.
 
 
@@ -27,7 +27,7 @@ To Read a document, traverse to localhost:port/api/v1/notes/hero where ```hero``
 
 To Update a document, traverse to localhost:port/api/v1/notes/hero.json where ```hero``` is a given hero name and the request body includes the data you want updated, i.e. ```{"text": "Avoid the Nanoblade!"}```
 
-To Delete a document, traverse to localhost:port/api/v1/notes/delete/hero where ```hero``` is a given hero name.
+To Delete a document, traverse to localhost:port/api/v1/notes/delete/id where ```id``` is the notes unique ObjectID OR click the 'x' icon next to a note.
 
 To get a List of all documents, traverse to localhost:port/api/v1/notes.json OR click the "Load Notes" button.
 

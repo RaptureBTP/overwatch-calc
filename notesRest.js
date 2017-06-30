@@ -40,8 +40,7 @@ router.put('/notes/update/:hero.json', function(req, res) {
 });
 
 //Delete
-// router.delete('/notes/delete/:hero', function(req, res) {
-router.delete('/notes/delete/:id', function(req, res) {
+router.delete('/notes/delete/:id', function(req, res) { // router.delete('/notes/delete/:hero', function(req, res) {
     let id = req.params.id;
     //let hero = req.params.hero;
     console.log("In router.delete, hope we delete entry with id " + id);

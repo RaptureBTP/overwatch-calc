@@ -76,14 +76,14 @@ angular.module("app", [])
         };
 
         $scope.getNotes = function(){
-            console.log("In getNotes");
+            //console.log("In getNotes");
             $http.get('api/v1/notes.json').then(displayNotes);
         };
 
         function displayNotes(notes){
-            console.log("In display notes");
+            //console.log("In display notes");
             $scope.notes = notes.data;
-            console.log($scope.notes);
+            //console.log($scope.notes);
             $scope.notesLoaded = true;
         }
 
