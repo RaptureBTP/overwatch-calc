@@ -33,6 +33,10 @@ th, td, .alert, .loadBtn{
     vertical-align: middle;
     color: green;
 }
+.glyphicon-remove{
+    color: red;
+    top: 2px;
+}
 .glyph-container{
     height: 35px;
 }
