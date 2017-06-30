@@ -15,13 +15,23 @@ exports.create = function(data) { //callbackFunc as last param?
         if (err) throw err;
         console.log("Connected correctly to server");
 
-
         db.collection('notes').insertMany(data, function (err, result) { //if it doesnt exist, it will create it
             if (err) throw err;
             console.log(result);
             db.close();
         });
     })
+};
+
+exports.add = function(data) {
+  mongo.connect(URL, function(err, db) {
+      if(err) throw err;
+
+      db.collection('notes').insertOne(data, function(err, result) {
+          if(err) throw err;
+          db.close();
+      });
+  })
 };
 
 exports.read = function(hero) {

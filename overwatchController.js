@@ -76,22 +76,24 @@ angular.module("app", [])
         };
 
         $scope.getNotes = function(){
-            //console.log("In getNotes");
             $http.get('api/v1/notes.json').then(displayNotes);
         };
 
         function displayNotes(notes){
-            //console.log("In display notes");
             $scope.notes = notes.data;
-            //console.log($scope.notes);
             $scope.notesLoaded = true;
         }
 
         $scope.deleteNotes = function(id){
-            //console.log("In delete notes.");
-            //console.log(id);
-            //console.log(hero);
             $http.delete('api/v1/notes/delete/' + id).then($scope.getNotes);
+        };
+
+        $scope.addNote = function(){
+            // console.log(document.getElementById("newNote").value);
+            // console.log($scope.newNoteHero);
+            //let newNoteObj = {character:$scope.newNoteHero, text: document.getElementById("newNote").value};
+            // console.log(newNoteObj);
+            $http.post('api/v1/notes/new', {character:$scope.newNoteHero, text: document.getElementById("newNote").value}).then($scope.getNotes);
         };
 
         $scope.heroSelected = function (hero, team) {

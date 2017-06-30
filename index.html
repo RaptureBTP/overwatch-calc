@@ -288,13 +288,21 @@
         </div>
         <div class="row">
             <div class="col-sm-4"></div>
-            <div class="col-sm-3">
+            <div class="col-sm-2 form-group">
+                <form name="noteForm">
+                    <select class="form-control"
+                            ng-options="option for option in allHeroes"
+                            ng-model="newNoteHero">
+                    </select>
+                </form>
+            </div>
+            <div class="col-sm-2">
                 <div class="form-group">
-                    <input type="text" ng-model="newNoteText" class="form-control" id="newNote">
+                    <textarea rows="3" ng-model="newNoteText" class="form-control" id="newNote"></textarea>
                 </div>
             </div>
-            <div class="col-sm-1 glyph-container" valign="center" title="Add a new note"><span class="glyphicon glyphicon-plus clickable"></span></div>
-            <div class="col-sm-4"></div>
+            <div class="col-sm-1 glyph-container" valign="center" title="Add a new note"><span class="glyphicon glyphicon-plus clickable" ng-click="addNote()"></span></div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
 </div>

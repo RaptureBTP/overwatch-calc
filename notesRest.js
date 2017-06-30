@@ -14,11 +14,18 @@ router.use(bodyParser.json()); //used for post and put
 
 //REST endpoints
 
-//Create
+//Create many/initialize
 router.post('/notes/init', function(req, res) { //needs data to be posted //next param at end?
     console.log("Data to be inserted : " + req.body); //logs
     task.create(req.body);
     res.status(200).redirect('../../../index.html'); //when front end notes are done, remove redirect?
+});
+
+//Create one
+router.post('/notes/new', function(req, res) {
+   console.log("Note to be inserted: " + req.body);
+   task.add(req.body);
+   res.status(200).send();
 });
 
 //Read
@@ -32,7 +39,6 @@ router.get('/notes/:hero', function(req, res) {
 //Update
 router.put('/notes/update/:hero.json', function(req, res) {
     let hero = req.params.hero;
-    //let updateData = req.body;
     task.update(hero, req.body);
     console.log(`Updating ${hero}`);
     //res.status(204).redirect('../../../index.html'); //update notes to use Angular asynchronously updating
@@ -42,7 +48,6 @@ router.put('/notes/update/:hero.json', function(req, res) {
 //Delete
 router.delete('/notes/delete/:id', function(req, res) { // router.delete('/notes/delete/:hero', function(req, res) {
     let id = req.params.id;
-    //let hero = req.params.hero;
     console.log("In router.delete, hope we delete entry with id " + id);
     task.delete(id);
     //res.status(200).redirect('../../index.html');
