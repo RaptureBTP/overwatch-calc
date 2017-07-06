@@ -17,11 +17,10 @@ To see these in action, run ```node index.js``` from the command line.
 **colors**: colors is used to output error messages in red. For an easy way to test this, supply a port number out of range or containing nonsense, for example: ```node index.js --port 325r923087v```
 
 ## Mongo:
-The latest build also includes implementation of a Mongo database. As of now, the HTML does not list the results, but the server console does.
+The latest build also includes implementation of a Mongo database.
 
 To Create/Insert a new document, traverse to localhost:port/api/v1/notes/init with a document or array of documents in the request body, i.e. ```[{"character" : "genji", "text" : "Use a hero with a beam weapon to avoid deflect"}, {""character" : "roadhog", "text" : "Hook cooldown is 8 seconds"}]```
-Note that using ```character``` to define the hero name is important to GET that hero's notes.
-
+Note that using ```character``` to define the hero name is important to GET that hero's notes. You can also use the built-in forms on the GUI to create notes.
 
 To Read a document, traverse to localhost:port/api/v1/notes/hero where ```hero``` is a given hero name.
 
@@ -35,13 +34,12 @@ To get a List of all documents, traverse to localhost:port/api/v1/notes.json OR 
 * Color-coded representation of each heroes counters and 'countered-by'
 * Images for use of quick selection, rather than trying to remember a heroes name (for new players)
 * Team composition select boxes for both teams which display bootstrap alerts based on problems in composition
+* RESTful Note taking feature implemented in GUI
 
 #### In-Progress:
-* Update hero counters and 'countered-by' after researching and consulting other players
 * Display specific hero-based tips based on enemy team composition, i.e. "Enemy Team has a Pharah, you should consider 1-2 hitscan heroes like Soldier, Widow, or McCree"
 * Display ally and enemy team Ultimate Ability synergies.
 * Allow filters to List specific heroes.
-* Update HTML/Angular to allow updating of notes information.
 
 #### Screenshots:
 * Color coding counter example:
