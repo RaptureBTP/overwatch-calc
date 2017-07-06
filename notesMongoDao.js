@@ -55,7 +55,7 @@ exports.update = function(hero, data) {
                 {character: hero},
                 {$set: data},
                 function(err, result) {
-                    if(err) throw err;;
+                    if(err) throw err;
                     db.close();
                 }
         );

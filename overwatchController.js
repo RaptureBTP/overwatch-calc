@@ -71,8 +71,8 @@ angular.module("app", [])
         }
 
         $scope.test =function(msg){
-            //console.log(msg);
-            console.log($scope.newNoteText);
+            console.log(msg);
+            //console.log($scope.newNoteText);
         };
 
         $scope.getNotes = function(){
@@ -89,10 +89,6 @@ angular.module("app", [])
         };
 
         $scope.addNote = function(){
-            // console.log(document.getElementById("newNote").value);
-            // console.log($scope.newNoteHero);
-            //let newNoteObj = {character:$scope.newNoteHero, text: document.getElementById("newNote").value};
-            // console.log(newNoteObj);
             $http.post('api/v1/notes/new', {character:$scope.newNoteHero, text: document.getElementById("newNote").value}).then($scope.getNotes);
         };
 
