@@ -8,6 +8,9 @@ The purpose of this project is to create a helpful visual tool to help decide on
 Many times when playing, my team will have a hard time dealing with a specific hero on the enemy team. When this happens, some of us may not know the correct counter to deal with them or we may not realize that the hero counters our team composition.  
 The design of this project is intended for multiple monitor set-ups, such that this calculator can reside in one of the secondary monitors for quick reference during gameplay.
 
+## Requirements:
+To use the Notes database features of this application, you'll need to have Nodejs and MongoDB installed on your computer, though the visual counter display and team composition work regardless.
+
 ## NPM:
 The latest build includes implementation of Nodejs, as well as the following node packages: *colors* and *nconf*.
 To see these in action, run ```node index.js``` from the command line.
