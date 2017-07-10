@@ -89,7 +89,10 @@ angular.module("app", [])
         };
 
         $scope.addNote = function(){
-            $http.post('api/v1/notes/new', {character:$scope.newNoteHero, text: document.getElementById("newNote").value}).then($scope.getNotes);
+            if(document.getElementById("newNote").value !== "") //check for empty note
+                $http.post('api/v1/notes/new', {character:$scope.newNoteHero, text: document.getElementById("newNote").value}).then($scope.getNotes);
+            else
+                console.log("Cant send empty note");
         };
 
         $scope.heroSelected = function (hero, team) {
